@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://b8varvqyx1vq1"]
+
+[ext_resource type="Script" path="res://ScenesAndScripts/game_manager.gd" id="1_2uhpc"]
+[ext_resource type="PackedScene" uid="uid://c66mnjkmm4kun" path="res://ScenesAndScripts/crossbow.tscn" id="2_dlpvs"]
+
+[node name="CrossBowTestScene" type="Node2D"]
+
+[node name="gameManager" type="Node2D" parent="." node_paths=PackedStringArray("phase1")]
+script = ExtResource("1_2uhpc")
+phase1 = [NodePath("../crossbow")]
+
+[node name="Timer" type="Timer" parent="gameManager"]
+wait_time = 10.0
+
+[node name="crossbow" parent="." instance=ExtResource("2_dlpvs")]
+position = Vector2(88, 54)
+
+[connection signal="timeout" from="gameManager/Timer" to="gameManager" method="_on_timer_timeout"]

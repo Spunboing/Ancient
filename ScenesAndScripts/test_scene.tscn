@@ -1,8 +1,10 @@
-[gd_scene load_steps=7 format=3 uid="uid://dhth6bx0re63t"]
+[gd_scene load_steps=9 format=3 uid="uid://dhth6bx0re63t"]
 
 [ext_resource type="Texture2D" uid="uid://b003uy38i83rs" path="res://Art/Tilset/[Free-Ver.]Tiles.png" id="1_ffevd"]
 [ext_resource type="Texture2D" uid="uid://45f3tskep7qd" path="res://Art/Tilset/[Free-Ver.]Props.png" id="2_f2wak"]
 [ext_resource type="PackedScene" uid="uid://dmtt4aob84w22" path="res://ScenesAndScripts/player.tscn" id="3_4jyg6"]
+[ext_resource type="PackedScene" uid="uid://c66mnjkmm4kun" path="res://ScenesAndScripts/crossbow.tscn" id="4_c1f15"]
+[ext_resource type="Script" path="res://ScenesAndScripts/game_manager.gd" id="5_cj53m"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5wudx"]
 texture = ExtResource("1_ffevd")
@@ -188,3 +190,16 @@ position = Vector2(70, 31)
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(70, -9)
 zoom = Vector2(2.305, 2.305)
+
+[node name="crossbow" parent="." instance=ExtResource("4_c1f15")]
+visible = true
+position = Vector2(-67, 37)
+
+[node name="gameManager" type="Node2D" parent="." node_paths=PackedStringArray("phase1")]
+script = ExtResource("5_cj53m")
+phase1 = [NodePath("../crossbow")]
+
+[node name="Timer" type="Timer" parent="gameManager"]
+wait_time = 3.0
+
+[connection signal="timeout" from="gameManager/Timer" to="gameManager" method="_on_timer_timeout"]
