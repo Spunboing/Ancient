@@ -1,0 +1,12 @@
+[gd_scene load_steps=3 format=3 uid="uid://co7ys6fm2crrb"]
+
+[ext_resource type="PackedScene" uid="uid://dmtt4aob84w22" path="res://ScenesAndScripts/player.tscn" id="1_5f18j"]
+[ext_resource type="PackedScene" uid="uid://b6ptowyrp0g00" path="res://ScenesAndScripts/sawblade.tscn" id="2_v2d5f"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="player" parent="." instance=ExtResource("1_5f18j")]
+position = Vector2(515, 258)
+
+[node name="sawblade" parent="." instance=ExtResource("2_v2d5f")]
+position = Vector2(530, 364)

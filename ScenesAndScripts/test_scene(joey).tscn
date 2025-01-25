@@ -1,8 +1,8 @@
-[gd_scene load_steps=8 format=3 uid="uid://ddqwr1e3ldmma"]
+[gd_scene load_steps=8 format=3 uid="uid://ut07albi7hu1"]
 
 [ext_resource type="Texture2D" uid="uid://b003uy38i83rs" path="res://Art/Tilset/[Free-Ver.]Tiles.png" id="1_e2cxc"]
 [ext_resource type="Texture2D" uid="uid://45f3tskep7qd" path="res://Art/Tilset/[Free-Ver.]Props.png" id="2_iarsx"]
-[ext_resource type="PackedScene" uid="uid://dtgieyr0l4uor" path="res://ScenesAndScripts/player.tscn" id="3_xq5bx"]
+[ext_resource type="PackedScene" uid="uid://dmtt4aob84w22" path="res://ScenesAndScripts/player.tscn" id="3_xq5bx"]
 [ext_resource type="PackedScene" uid="uid://b6ptowyrp0g00" path="res://ScenesAndScripts/sawblade.tscn" id="4_h75xu"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5wudx"]
