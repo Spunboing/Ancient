@@ -1,3 +1,4 @@
+
 [gd_scene load_steps=10 format=3 uid="uid://ut07albi7hu1"]
 
 [ext_resource type="Texture2D" uid="uid://b003uy38i83rs" path="res://Art/Tilset/[Free-Ver.]Tiles.png" id="1_e2cxc"]
@@ -6,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://b6ptowyrp0g00" path="res://ScenesAndScripts/sawblade.tscn" id="4_h75xu"]
 [ext_resource type="PackedScene" uid="uid://cv7d7p16bi45e" path="res://ScenesAndScripts/spike.tscn" id="5_mf3if"]
 [ext_resource type="PackedScene" uid="uid://kcxohejrattg" path="res://ScenesAndScripts/batt.tscn" id="6_fhywk"]
+
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5wudx"]
 texture = ExtResource("1_e2cxc")
