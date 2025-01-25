@@ -192,7 +192,7 @@ position = Vector2(70, -9)
 zoom = Vector2(2.305, 2.305)
 
 [node name="Node2D" parent="." instance=ExtResource("4_h75xu")]
-position = Vector2(114, 33)
+position = Vector2(108, 36)
 
 [node name="spike" parent="." instance=ExtResource("5_mf3if")]
 position = Vector2(25, 29)
