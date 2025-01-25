@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://c66mnjkmm4kun"]
+
+[ext_resource type="Texture2D" uid="uid://b2rbcltlcuhu5" path="res://Art/crossbow_loaded.png" id="1_2sog7"]
+[ext_resource type="Script" path="res://ScenesAndScripts/crossbow.gd" id="2_b2dqe"]
+
+[node name="crossbow" type="Sprite2D"]
+visible = false
+texture = ExtResource("1_2sog7")
+script = ExtResource("2_b2dqe")
