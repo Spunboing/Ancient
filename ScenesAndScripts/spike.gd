@@ -7,13 +7,13 @@ extends Node2D
 
 
 func _ready():
-	activate()
+	enable()
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		body.damage(0)
 
-func activate():
+func enable():
 	spike.play("warning")
 	warn.start()
 
