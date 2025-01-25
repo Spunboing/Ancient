@@ -143,6 +143,7 @@ animations = [{
 }]
 
 [node name="player" type="CharacterBody2D" groups=["player"]]
+z_index = 1
 script = ExtResource("1_1uxog")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
