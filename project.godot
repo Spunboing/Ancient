@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="MicroJam-Ancient"
+config/name="Ancient"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
 
