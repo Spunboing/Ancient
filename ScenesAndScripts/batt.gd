@@ -6,7 +6,6 @@ var player_pos
 var target_pos
 
 
-
 func _process(delta):
 	
 	player_pos = player.position

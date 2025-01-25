@@ -174,7 +174,7 @@ physics_layer_0/collision_layer = 1
 sources/2 = SubResource("TileSetAtlasSource_5wudx")
 sources/3 = SubResource("TileSetAtlasSource_tpx3o")
 
-[node name="testScene" type="Node2D"]
+[node name="testScene2" type="Node2D"]
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_r2vch")
