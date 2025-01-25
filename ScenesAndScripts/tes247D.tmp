@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://dmtt4aob84w22" path="res://ScenesAndScripts/player.tscn" id="3_xq5bx"]
 [ext_resource type="PackedScene" uid="uid://b6ptowyrp0g00" path="res://ScenesAndScripts/sawblade.tscn" id="4_h75xu"]
 [ext_resource type="PackedScene" uid="uid://cv7d7p16bi45e" path="res://ScenesAndScripts/spike.tscn" id="5_mf3if"]
-[ext_resource type="PackedScene" uid="uid://kcxohejrattg" path="res://ScenesAndScripts/batt.tscn" id="6_fhywk"]
+[ext_resource type="PackedScene" uid="uid://c7ad8pilwa6s1" path="res://ScenesAndScripts/bat.tscn" id="6_sddl6"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5wudx"]
 texture = ExtResource("1_e2cxc")
@@ -198,5 +198,6 @@ zoom = Vector2(2.305, 2.305)
 [node name="Node2D" parent="." instance=ExtResource("4_h75xu")]
 position = Vector2(114, 33)
 
-[node name="batt" parent="." instance=ExtResource("6_fhywk")]
-position = Vector2(136, -59)
+[node name="bat" parent="." instance=ExtResource("6_sddl6")]
+position = Vector2(140, -60)
+script = null

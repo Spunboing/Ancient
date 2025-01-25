@@ -1,0 +1,52 @@
+[gd_scene load_steps=8 format=3 uid="uid://kcxohejrattg"]
+
+[ext_resource type="Texture2D" uid="uid://bu6gp77vuvru2" path="res://Art/Bat and Guy_0_0.png" id="1_gc1ln"]
+[ext_resource type="Script" path="res://ScenesAndScripts/batt.gd" id="1_r2r5h"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_obwru"]
+atlas = ExtResource("1_gc1ln")
+region = Rect2(16, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_l36fm"]
+atlas = ExtResource("1_gc1ln")
+region = Rect2(0, 0, 6, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kdh6g"]
+atlas = ExtResource("1_gc1ln")
+region = Rect2(8, 0, 8, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_pe0rb"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_obwru")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_l36fm")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kdh6g")
+}],
+"loop": true,
+"name": &"default",
+"speed": 7.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o8a04"]
+size = Vector2(4, 5)
+
+[node name="batt" type="CharacterBody2D"]
+script = ExtResource("1_r2r5h")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_pe0rb")
+autoplay = "default"
+frame_progress = 0.624275
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_o8a04")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
