@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://c66mnjkmm4kun"]
+[gd_scene load_steps=21 format=3 uid="uid://c66mnjkmm4kun"]
 
 [ext_resource type="Texture2D" uid="uid://dxstta483d2ip" path="res://Art/crossbow_loaded-sheet.png" id="1_d8gn0"]
 [ext_resource type="Script" path="res://ScenesAndScripts/crossbow.gd" id="2_b2dqe"]
@@ -54,6 +54,22 @@ region = Rect2(240, 0, 24, 24)
 [sub_resource type="AtlasTexture" id="AtlasTexture_dmake"]
 atlas = ExtResource("1_d8gn0")
 region = Rect2(264, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_np4a2"]
+atlas = ExtResource("1_d8gn0")
+region = Rect2(48, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gbvhw"]
+atlas = ExtResource("1_d8gn0")
+region = Rect2(72, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3yrf3"]
+atlas = ExtResource("1_d8gn0")
+region = Rect2(96, 24, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6gvn5"]
+atlas = ExtResource("1_d8gn0")
+region = Rect2(120, 24, 24, 24)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_lylhf"]
 animations = [{
@@ -111,9 +127,26 @@ animations = [{
 "loop": false,
 "name": &"load",
 "speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_np4a2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gbvhw")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3yrf3")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6gvn5")
+}],
+"loop": false,
+"name": &"popUp_popDown",
+"speed": 8.0
 }]
 
 [node name="crossbow" type="AnimatedSprite2D"]
 sprite_frames = SubResource("SpriteFrames_lylhf")
-animation = &"load"
+animation = &"popUp_popDown"
 script = ExtResource("2_b2dqe")
