@@ -1,7 +1,6 @@
-[gd_scene load_steps=22 format=3 uid="uid://dmtt4aob84w22"]
+[gd_scene load_steps=21 format=3 uid="uid://dmtt4aob84w22"]
 
 [ext_resource type="Script" path="res://ScenesAndScripts/player.gd" id="1_1uxog"]
-[ext_resource type="Texture2D" uid="uid://dlj0ny7s24xfa" path="res://Art/tempCharacter.png" id="2_1tiow"]
 [ext_resource type="Texture2D" uid="uid://dgcb3mv0q2rk6" path="res://Art/Tilset/characterAnimationSheet.png" id="3_h1eie"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_06y5n"]
@@ -148,7 +147,6 @@ script = ExtResource("1_1uxog")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 visible = false
-texture = ExtResource("2_1tiow")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 8)
@@ -160,7 +158,6 @@ one_shot = true
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_gn4t0")
-animation = &"walkUp"
-frame_progress = 0.668048
+animation = &"walkDown"
 
 [connection signal="timeout" from="i-frames" to="." method="_on_iframes_timeout"]
