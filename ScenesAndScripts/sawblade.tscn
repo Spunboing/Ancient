@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://fnd7d85s36g8"]
+[gd_scene load_steps=10 format=3 uid="uid://b6ptowyrp0g00"]
 
 [ext_resource type="Script" path="res://ScenesAndScripts/sawblade.gd" id="1_cjwxw"]
 [ext_resource type="Texture2D" uid="uid://bhmq2thlqqg2o" path="res://Art/SawBladeSuriken.png" id="2_cdnbv"]

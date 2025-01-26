@@ -6,15 +6,14 @@ extends Node2D
 @onready var hitbox: CollisionShape2D = $killbox/CollisionShape2D
 
 
-
-func _ready():
-	enable()
-
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		body.damage(0)
 
 func enable():
+	start()
+
+func start():
 	spike.play("warning")
 	warn.start()
 

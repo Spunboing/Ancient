@@ -88,7 +88,7 @@ script = ExtResource("1_djrxq")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_eqh64")
-animation = &"retreat"
+animation = &"warning"
 
 [node name="killbox" type="Area2D" parent="."]
 
