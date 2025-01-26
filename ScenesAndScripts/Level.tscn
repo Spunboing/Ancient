@@ -504,4 +504,6 @@ phase1 = [null]
 [node name="Timer" type="Timer" parent="gameManager"]
 wait_time = 10.0
 
+[node name="spikecyctime" type="Timer" parent="gameManager"]
+
 [connection signal="timeout" from="gameManager/Timer" to="gameManager" method="_on_timer_timeout"]
