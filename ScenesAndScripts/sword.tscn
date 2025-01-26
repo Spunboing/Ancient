@@ -1,7 +1,8 @@
-[gd_scene load_steps=20 format=3 uid="uid://qafx3psuvs7o"]
+[gd_scene load_steps=21 format=3 uid="uid://qafx3psuvs7o"]
 
 [ext_resource type="Script" path="res://ScenesAndScripts/sword.gd" id="1_4o3wp"]
 [ext_resource type="Texture2D" uid="uid://ueydr78sqjpu" path="res://Art/bigSword.png" id="2_7fg34"]
+[ext_resource type="AudioStream" uid="uid://b5rdi6dinmuc5" path="res://SFX/swordSwing.mp3" id="3_8i0m8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bdn8x"]
 atlas = ExtResource("2_7fg34")
@@ -125,7 +126,6 @@ animations = [{
 size = Vector2(43, 8)
 
 [node name="Sword" type="Node2D"]
-visible = false
 script = ExtResource("1_4o3wp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -139,5 +139,9 @@ frame_progress = 1.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(-2.5, 18)
 shape = SubResource("RectangleShape2D_5n0ui")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_8i0m8")
+volume_db = 7.354
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

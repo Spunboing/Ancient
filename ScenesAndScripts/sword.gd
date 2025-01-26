@@ -18,6 +18,7 @@ func enable():
 	await get_tree().create_timer(2).timeout
 	falling = true
 	$AnimatedSprite2D.play("fall")
+	$AudioStreamPlayer2D.play()
 	
 func _process(delta):
 	if falling:
