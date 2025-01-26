@@ -1,0 +1,36 @@
+[gd_scene load_steps=6 format=3 uid="uid://bu0querqg727w"]
+
+[ext_resource type="Texture2D" uid="uid://3u22t307b0dl" path="res://Art/rat.png" id="1_eb75f"]
+[ext_resource type="Script" path="res://ScenesAndScripts/rat.gd" id="2_gfcog"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_btbb6"]
+atlas = ExtResource("1_eb75f")
+region = Rect2(0, 0, 8, 8)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3tkds"]
+atlas = ExtResource("1_eb75f")
+region = Rect2(8, 0, 8, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_hp0ch"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_btbb6")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3tkds")
+}],
+"loop": true,
+"name": &"run",
+"speed": 7.0
+}]
+
+[node name="Rat" type="AnimatedSprite2D"]
+sprite_frames = SubResource("SpriteFrames_hp0ch")
+animation = &"run"
+autoplay = "run"
+frame_progress = 0.784354
+script = ExtResource("2_gfcog")
+
+[node name="RayCast2D" type="RayCast2D" parent="."]
+target_position = Vector2(100, 0)
