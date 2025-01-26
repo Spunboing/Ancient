@@ -21,12 +21,13 @@ func enable():
 	
 func _process(delta):
 	if falling:
-		if $AnimatedSprite2D.frame >= 3 and checkedDamage == false:
+		if $AnimatedSprite2D.frame == 3 and checkedDamage == false:
 			for obj in $Area2D.get_overlapping_bodies():
 				if obj.is_in_group("player"):
 					print("hit player")
 					checkedDamage = true
 					obj.damage(0)
+					obj.addShake(5)
 func disable():
 	print("disabling sword")
 	visible = false

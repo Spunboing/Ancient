@@ -334,6 +334,7 @@ position = Vector2(203, -328)
 position = Vector2(252, -328)
 
 [node name="spike11" parent="spike" instance=ExtResource("5_gfw7l")]
+visible = false
 position = Vector2(301, -328)
 
 [node name="player" parent="." instance=ExtResource("1_5f18j")]
