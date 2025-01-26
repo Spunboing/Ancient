@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dhth6bx0re63t"]
+[gd_scene load_steps=11 format=3 uid="uid://dhth6bx0re63t"]
 
 [ext_resource type="Texture2D" uid="uid://b003uy38i83rs" path="res://Art/Tilset/[Free-Ver.]Tiles.png" id="1_ffevd"]
 [ext_resource type="Texture2D" uid="uid://45f3tskep7qd" path="res://Art/Tilset/[Free-Ver.]Props.png" id="2_f2wak"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://qafx3psuvs7o" path="res://ScenesAndScripts/sword.tscn" id="4_x2csp"]
 [ext_resource type="Script" path="res://ScenesAndScripts/game_manager.gd" id="5_cj53m"]
 [ext_resource type="PackedScene" uid="uid://h3agvb754nyg" path="res://ScenesAndScripts/ceiling_tile.tscn" id="6_fhwbp"]
+[ext_resource type="PackedScene" uid="uid://bu0querqg727w" path="res://ScenesAndScripts/rat.tscn" id="7_5gnhs"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5wudx"]
 texture = ExtResource("1_ffevd")
@@ -198,7 +199,7 @@ position = Vector2(72, -54)
 
 [node name="gameManager" type="Node2D" parent="." node_paths=PackedStringArray("phase1")]
 script = ExtResource("5_cj53m")
-phase1 = [NodePath("../Sword"), NodePath("../CeilingTile")]
+phase1 = [NodePath("../Sword"), NodePath("../CeilingTile"), NodePath("../Rat")]
 
 [node name="Timer" type="Timer" parent="gameManager"]
 wait_time = 5.0
@@ -206,5 +207,10 @@ wait_time = 5.0
 [node name="CeilingTile" parent="." instance=ExtResource("6_fhwbp")]
 visible = false
 position = Vector2(144, -48)
+
+[node name="Rat" parent="." instance=ExtResource("7_5gnhs")]
+position = Vector2(0, 35)
+enabled = false
+SPEED = 75.0
 
 [connection signal="timeout" from="gameManager/Timer" to="gameManager" method="_on_timer_timeout"]
