@@ -13,7 +13,6 @@ var hp = 5
 func _physics_process(delta: float) -> void:
 	# Add the gravity.
 	var input = Input.get_vector("move_left", "move_right", "move_up", "move_down")
-	print(input)
 	if input.length() >= 0.1:
 		
 		if input.y > 0:
@@ -27,7 +26,6 @@ func _physics_process(delta: float) -> void:
 				$AnimatedSprite2D.play("walkLeft")
 
 	else:
-		print("stopped")
 		$AnimatedSprite2D.pause()
 			
 	velocity = input * SPEED * delta
