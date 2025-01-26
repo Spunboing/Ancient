@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://b6ptowyrp0g00"]
+[gd_scene load_steps=10 format=3 uid="uid://fnd7d85s36g8"]
 
 [ext_resource type="Script" path="res://ScenesAndScripts/sawblade.gd" id="1_cjwxw"]
 [ext_resource type="Texture2D" uid="uid://bhmq2thlqqg2o" path="res://Art/SawBladeSuriken.png" id="2_cdnbv"]
+[ext_resource type="AudioStream" uid="uid://iu504fa04dva" path="res://SFX/sawPopup.mp3" id="3_0gn13"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_yxn1y"]
 atlas = ExtResource("2_cdnbv")
@@ -54,5 +55,8 @@ frame_progress = 1.0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource("CircleShape2D_o34l3")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_0gn13")
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

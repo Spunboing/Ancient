@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dhth6bx0re63t"]
+[gd_scene load_steps=14 format=3 uid="uid://dhth6bx0re63t"]
 
 [ext_resource type="Texture2D" uid="uid://b003uy38i83rs" path="res://Art/Tilset/[Free-Ver.]Tiles.png" id="1_ffevd"]
 [ext_resource type="Texture2D" uid="uid://45f3tskep7qd" path="res://Art/Tilset/[Free-Ver.]Props.png" id="2_f2wak"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bu0querqg727w" path="res://ScenesAndScripts/rat.tscn" id="7_5gnhs"]
 [ext_resource type="Script" path="res://ScenesAndScripts/cameraScript.gd" id="8_fsok3"]
 [ext_resource type="PackedScene" uid="uid://c66mnjkmm4kun" path="res://ScenesAndScripts/crossbow.tscn" id="9_ob3tj"]
+[ext_resource type="PackedScene" uid="uid://fnd7d85s36g8" path="res://ScenesAndScripts/sawblade.tscn" id="10_n8ct2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5wudx"]
 texture = ExtResource("1_ffevd")
@@ -198,7 +199,7 @@ position = Vector2(72, -54)
 
 [node name="gameManager" type="Node2D" parent="." node_paths=PackedStringArray("phase1")]
 script = ExtResource("5_cj53m")
-phase1 = [NodePath("../Sword"), NodePath("../CeilingTile"), NodePath("../Rat"), NodePath("../crossbow")]
+phase1 = [NodePath("../Sword"), NodePath("../CeilingTile"), NodePath("../Rat"), NodePath("../crossbow"), NodePath("../sawblade"), NodePath("../sawblade2")]
 
 [node name="Timer" type="Timer" parent="gameManager"]
 wait_time = 5.0
@@ -222,5 +223,13 @@ script = ExtResource("8_fsok3")
 [node name="crossbow" parent="." instance=ExtResource("9_ob3tj")]
 visible = false
 position = Vector2(60, -85)
+
+[node name="sawblade" parent="." instance=ExtResource("10_n8ct2")]
+visible = false
+position = Vector2(132, 37)
+
+[node name="sawblade2" parent="." instance=ExtResource("10_n8ct2")]
+visible = false
+position = Vector2(36, 61)
 
 [connection signal="timeout" from="gameManager/Timer" to="gameManager" method="_on_timer_timeout"]
