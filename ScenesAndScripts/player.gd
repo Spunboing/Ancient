@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 @onready var i_frames: Timer = $"i-frames"
 @onready var sprite_2d: Sprite2D = $Sprite2D
+@export var cam: Camera2D
 
 const SPEED = 8000.0
 
@@ -55,3 +56,7 @@ func _on_iframes_timeout() -> void:
 
 func gameover():
 	print("YOU DIED :(")
+
+
+func addShake(amount: float):
+	cam.addShake(amount)

@@ -1,8 +1,9 @@
-[gd_scene load_steps=9 format=3 uid="uid://h3agvb754nyg"]
+[gd_scene load_steps=12 format=3 uid="uid://h3agvb754nyg"]
 
 [ext_resource type="Script" path="res://ScenesAndScripts/ceiling_tile.gd" id="1_ke1f6"]
 [ext_resource type="Texture2D" uid="uid://cnm1ing6qxotl" path="res://Art/ceilingTileShadow.png" id="2_hv5a7"]
 [ext_resource type="Texture2D" uid="uid://c2iyo11hjhaok" path="res://Art/ceilingTile.png" id="3_48lvl"]
+[ext_resource type="Texture2D" uid="uid://dlmtmeuwvmqvt" path="res://Art/tileShard.png" id="4_imm8l"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3ab27"]
 atlas = ExtResource("3_48lvl")
@@ -41,6 +42,16 @@ animations = [{
 [sub_resource type="CircleShape2D" id="CircleShape2D_hkjqr"]
 radius = 12.0
 
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_6leku"]
+particles_animation = true
+particles_anim_h_frames = 3
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Gradient" id="Gradient_wtsew"]
+offsets = PackedFloat32Array(0.666667, 0.876812)
+colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
+
 [node name="CeilingTile" type="Node2D"]
 script = ExtResource("1_ke1f6")
 
@@ -58,3 +69,24 @@ frame_progress = 0.372689
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 position = Vector2(0, 48)
 shape = SubResource("CircleShape2D_hkjqr")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+material = SubResource("CanvasItemMaterial_6leku")
+position = Vector2(-1, 48)
+emitting = false
+amount = 5
+lifetime = 0.4
+one_shot = true
+explosiveness = 1.0
+texture = ExtResource("4_imm8l")
+direction = Vector2(0, -1)
+initial_velocity_min = 142.26
+initial_velocity_max = 195.35
+angular_velocity_min = -588.39
+angular_velocity_max = 510.97
+damping_min = 67.742
+damping_max = 86.142
+scale_amount_min = 0.7
+scale_amount_max = 0.7
+color_ramp = SubResource("Gradient_wtsew")
+anim_offset_max = 1.0
