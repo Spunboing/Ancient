@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://dmtt4aob84w22" path="res://ScenesAndScripts/player.tscn" id="1_5f18j"]
 [ext_resource type="Texture2D" uid="uid://b003uy38i83rs" path="res://Art/Tilset/[Free-Ver.]Tiles.png" id="1_t1tpp"]
 [ext_resource type="Texture2D" uid="uid://45f3tskep7qd" path="res://Art/Tilset/[Free-Ver.]Props.png" id="2_fpisu"]
-[ext_resource type="PackedScene" uid="uid://kcxohejrattg" path="res://ScenesAndScripts/batt.tscn" id="4_5782m"]
+[ext_resource type="PackedScene" path="res://ScenesAndScripts/batt.tscn" id="4_5782m"]
 [ext_resource type="PackedScene" uid="uid://dkg2ex3k1iiwl" path="res://ScenesAndScripts/knight.tscn" id="4_t62va"]
 [ext_resource type="PackedScene" uid="uid://cv7d7p16bi45e" path="res://ScenesAndScripts/spike.tscn" id="5_gfw7l"]
 [ext_resource type="PackedScene" uid="uid://c66mnjkmm4kun" path="res://ScenesAndScripts/crossbow.tscn" id="6_4ebgd"]
@@ -213,7 +213,7 @@ position = Vector2(-203, -275)
 
 [node name="crossbow2" parent="Crossbows" instance=ExtResource("6_4ebgd")]
 position = Vector2(-207, -177)
-frame = 13
+frame = 3
 frame_progress = 1.0
 
 [node name="crossbow3" parent="Crossbows" instance=ExtResource("6_4ebgd")]
