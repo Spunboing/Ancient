@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://brjmnmepv66xv"]
+[gd_scene load_steps=12 format=3 uid="uid://brjmnmepv66xv"]
 
 [ext_resource type="Script" path="res://ScenesAndScripts/game_manager.gd" id="1_3vgde"]
 [ext_resource type="PackedScene" uid="uid://dmtt4aob84w22" path="res://ScenesAndScripts/player.tscn" id="1_5f18j"]
 [ext_resource type="Texture2D" uid="uid://b003uy38i83rs" path="res://Art/Tilset/[Free-Ver.]Tiles.png" id="1_t1tpp"]
 [ext_resource type="Texture2D" uid="uid://45f3tskep7qd" path="res://Art/Tilset/[Free-Ver.]Props.png" id="2_fpisu"]
+[ext_resource type="PackedScene" uid="uid://kcxohejrattg" path="res://ScenesAndScripts/batt.tscn" id="4_5782m"]
 [ext_resource type="PackedScene" uid="uid://dkg2ex3k1iiwl" path="res://ScenesAndScripts/knight.tscn" id="4_t62va"]
 [ext_resource type="PackedScene" uid="uid://cv7d7p16bi45e" path="res://ScenesAndScripts/spike.tscn" id="5_gfw7l"]
 [ext_resource type="PackedScene" uid="uid://c66mnjkmm4kun" path="res://ScenesAndScripts/crossbow.tscn" id="6_4ebgd"]
@@ -197,6 +198,14 @@ layer_2/tile_data = PackedInt32Array(-983045, 131074, 0, -983044, 131074, 0, -98
 layer_3/name = "Traps"
 layer_3/z_index = 2
 
+[node name="Bats" type="Node" parent="."]
+
+[node name="batt" parent="Bats" groups=["bat"] instance=ExtResource("4_5782m")]
+position = Vector2(-250, -186)
+
+[node name="batt2" parent="Bats" groups=["bat"] instance=ExtResource("4_5782m")]
+position = Vector2(375, -183)
+
 [node name="Crossbows" type="Node" parent="."]
 
 [node name="crossbow" parent="Crossbows" instance=ExtResource("6_4ebgd")]
@@ -221,6 +230,26 @@ rotation = -3.12325
 [node name="crossbow5" parent="Crossbows" instance=ExtResource("6_4ebgd")]
 position = Vector2(327, -298)
 rotation = -3.12325
+
+[node name="Knights" type="Node" parent="."]
+
+[node name="knight" parent="Knights" groups=["knight"] instance=ExtResource("4_t62va")]
+position = Vector2(-197, 46)
+
+[node name="knight2" parent="Knights" groups=["knight"] instance=ExtResource("4_t62va")]
+position = Vector2(51, 46)
+
+[node name="knight3" parent="Knights" groups=["knight"] instance=ExtResource("4_t62va")]
+position = Vector2(298, 47)
+
+[node name="knight4" parent="Knights" groups=["knight"] instance=ExtResource("4_t62va")]
+position = Vector2(-193, -421)
+
+[node name="knight5" parent="Knights" groups=["knight"] instance=ExtResource("4_t62va")]
+position = Vector2(55, -421)
+
+[node name="knight6" parent="Knights" groups=["knight"] instance=ExtResource("4_t62va")]
+position = Vector2(302, -420)
 
 [node name="Spike Things" type="Node" parent="."]
 
@@ -366,26 +395,6 @@ position = Vector2(252, -328)
 [node name="spike11" parent="Spike Things/Individual Spikes/spikerow1" groups=["sr1"] instance=ExtResource("5_gfw7l")]
 position = Vector2(301, -328)
 
-[node name="Knights" type="Node" parent="."]
-
-[node name="knight" parent="Knights" groups=["knight"] instance=ExtResource("4_t62va")]
-position = Vector2(-197, 46)
-
-[node name="knight2" parent="Knights" groups=["knight"] instance=ExtResource("4_t62va")]
-position = Vector2(51, 46)
-
-[node name="knight3" parent="Knights" groups=["knight"] instance=ExtResource("4_t62va")]
-position = Vector2(298, 47)
-
-[node name="knight4" parent="Knights" groups=["knight"] instance=ExtResource("4_t62va")]
-position = Vector2(-193, -421)
-
-[node name="knight5" parent="Knights" groups=["knight"] instance=ExtResource("4_t62va")]
-position = Vector2(55, -421)
-
-[node name="knight6" parent="Knights" groups=["knight"] instance=ExtResource("4_t62va")]
-position = Vector2(302, -420)
-
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(60, -185)
 zoom = Vector2(1.7, 1.7)
@@ -402,5 +411,10 @@ wait_time = 60.0
 [node name="spikecyctime" type="Timer" parent="gameManager"]
 
 [node name="knight_cycle_time" type="Timer" parent="gameManager"]
+
+[node name="bat_time" type="Timer" parent="gameManager"]
+wait_time = 30.0
+one_shot = true
+autostart = true
 
 [connection signal="timeout" from="gameManager/phase_time" to="gameManager" method="_on_phase_time_timeout"]
