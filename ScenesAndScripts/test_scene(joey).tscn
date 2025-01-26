@@ -3,9 +3,9 @@
 [ext_resource type="Texture2D" uid="uid://b003uy38i83rs" path="res://Art/Tilset/[Free-Ver.]Tiles.png" id="1_e2cxc"]
 [ext_resource type="Texture2D" uid="uid://45f3tskep7qd" path="res://Art/Tilset/[Free-Ver.]Props.png" id="2_iarsx"]
 [ext_resource type="PackedScene" uid="uid://dmtt4aob84w22" path="res://ScenesAndScripts/player.tscn" id="3_xq5bx"]
-[ext_resource type="PackedScene" path="res://ScenesAndScripts/sawblade.tscn" id="4_h75xu"]
+[ext_resource type="PackedScene" uid="uid://b6ptowyrp0g00" path="res://ScenesAndScripts/sawblade.tscn" id="4_h75xu"]
 [ext_resource type="PackedScene" uid="uid://cv7d7p16bi45e" path="res://ScenesAndScripts/spike.tscn" id="5_mf3if"]
-[ext_resource type="PackedScene" path="res://ScenesAndScripts/batt.tscn" id="6_fhywk"]
+[ext_resource type="PackedScene" uid="uid://kcxohejrattg" path="res://ScenesAndScripts/batt.tscn" id="6_fhywk"]
 [ext_resource type="PackedScene" uid="uid://dkg2ex3k1iiwl" path="res://ScenesAndScripts/knight.tscn" id="7_khs35"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5wudx"]
