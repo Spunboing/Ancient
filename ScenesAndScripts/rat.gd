@@ -21,13 +21,7 @@ func disable():
 	visible = false
 	enabled = false
 
-var rayHitPoint
-var rayDir
 
-func _draw():
-	if rayHitPoint:
-		draw_line(to_local(rayHitPoint), to_local(rayHitPoint+(rayDir.rotated(PI/2))*10), Color.RED)
-	draw_line(Vector2.ZERO, to_local(global_position+Vector2(cos(rotation), sin(rotation))) * 10, Color.GREEN)
 
 func _process(delta):
 	var spaceState = get_world_2d().direct_space_state
@@ -42,8 +36,6 @@ func _process(delta):
 			result.collider.damage(0)
 		else:
 			var setAngle = (Vector2(cos(rotation), sin(rotation)).bounce(result.normal).angle())
-			rayHitPoint = result.position
-			rayDir = result.normal
 			rotation = setAngle
 			if result.collider.is_in_group("player"):
 				result.collider.damage(0)
