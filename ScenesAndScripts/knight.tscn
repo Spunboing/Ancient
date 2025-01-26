@@ -29,8 +29,10 @@ animations = [{
 size = Vector2(10, 20)
 
 [node name="knight" type="CharacterBody2D"]
+scale = Vector2(3, 3)
 script = ExtResource("1_b7kei")
-activate = true
+speed = 100
+chargespeed = 300
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_l8s25")

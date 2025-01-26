@@ -3,8 +3,9 @@ extends CharacterBody2D
 @export var speed = 75
 @export var chargespeed = 150
 @export var activate = false
+@export var gogo = false
 
-@onready var player: CharacterBody2D = $"../player"
+@onready var player: CharacterBody2D = $"../../player"
 @onready var knight: CharacterBody2D = $"."
 @onready var timer: Timer = $Timer
 @onready var pos = position
@@ -14,6 +15,7 @@ var dir = 1
 var attack = false
 
 func enable():
+	gogo = true
 	activate = true
 
 func check_dir():
@@ -24,29 +26,30 @@ func check_dir():
 	need_to_check_direction = false
 
 func _physics_process(delta):
-	if !attack:
-		if position.x <= player.position.x:
-			scale.x = 1
-		else:
-			scale.x = -1
+	if gogo:
+		if !attack:
+			if position.x <= player.position.x:
+				scale.x = 1
+			else:
+				scale.x = -1
 
-	if activate:
-		if position.y >= player.position.y -3 && position.y <= player.position.y + 3:
-			attack = true
-			print("CHARRRGE")
-		elif position.y < player.position.y:
-			if !attack:
-				position.y+=delta*speed
-		elif position.y > player.position.y:
-			if !attack:
-				position.y-=delta*speed
+		if activate:
+			if position.y >= player.position.y -3 && position.y <= player.position.y + 3:
+				attack = true
+				print("CHARRRGE")
+			elif position.y < player.position.y:
+				if !attack:
+					position.y+=delta*speed
+			elif position.y > player.position.y:
+				if !attack:
+					position.y-=delta*speed
 
-		if attack:
-			position.x+=delta*chargespeed*dir
-			if timer.is_stopped():
-				timer.start()
-			if need_to_check_direction:
-				check_dir()
+			if attack:
+				position.x+=delta*chargespeed*dir
+				if timer.is_stopped():
+					timer.start()
+				if need_to_check_direction:
+					check_dir()
 
 func _on_timer_timeout() -> void:
 	position = pos
