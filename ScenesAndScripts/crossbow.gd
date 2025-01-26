@@ -4,8 +4,8 @@ extends AnimatedSprite2D
 var arrowPrefab:= preload("res://ScenesAndScripts/arrow.tscn")
 
 
-#can be unloaded, loading, loaded
-var loadState: String = "unloaded"
+#can be spawning, unloaded, loading, loaded
+var loadState: String = "spawning"
 var startLoadTime = 0
 
 #called by game manager to enable device/enemy
@@ -13,10 +13,18 @@ func enable():
 	print("enabling crossbow")
 	visible = true
 	enabled = true
+	loadState = "spawning"
+	scale = Vector2(0.5, 0.5)
+	play("popUp_popDown")
+	var tween = get_tree().create_tween()
+	tween.tween_property(self, "scale", Vector2.ONE, 0.3)
+	await get_tree().create_timer(0.5).timeout
 	loadState = "unloaded"
 	
 func disable():
-	print("disabling crossbow")
+	enabled = false
+	play_backwards("popUp_popDown")
+	await animation_finished
 	visible = false
 	enabled = false
 
