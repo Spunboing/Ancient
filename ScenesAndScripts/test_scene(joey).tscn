@@ -1,13 +1,11 @@
-
-[gd_scene load_steps=10 format=3 uid="uid://ut07albi7hu1"]
+[gd_scene load_steps=10 format=3 uid="uid://dirwh4wi3dy17"]
 
 [ext_resource type="Texture2D" uid="uid://b003uy38i83rs" path="res://Art/Tilset/[Free-Ver.]Tiles.png" id="1_e2cxc"]
 [ext_resource type="Texture2D" uid="uid://45f3tskep7qd" path="res://Art/Tilset/[Free-Ver.]Props.png" id="2_iarsx"]
 [ext_resource type="PackedScene" uid="uid://dmtt4aob84w22" path="res://ScenesAndScripts/player.tscn" id="3_xq5bx"]
-[ext_resource type="PackedScene" uid="uid://b6ptowyrp0g00" path="res://ScenesAndScripts/sawblade.tscn" id="4_h75xu"]
-[ext_resource type="PackedScene" uid="uid://cv7d7p16bi45e" path="res://ScenesAndScripts/spike.tscn" id="5_mf3if"]
-[ext_resource type="PackedScene" uid="uid://kcxohejrattg" path="res://ScenesAndScripts/batt.tscn" id="6_fhywk"]
-
+[ext_resource type="PackedScene" path="res://ScenesAndScripts/sawblade.tscn" id="4_h75xu"]
+[ext_resource type="PackedScene" uid="uid://coad6y7pd6gqn" path="res://ScenesAndScripts/spike.tscn" id="5_mf3if"]
+[ext_resource type="PackedScene" path="res://ScenesAndScripts/batt.tscn" id="6_fhywk"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5wudx"]
 texture = ExtResource("1_e2cxc")
@@ -191,6 +189,7 @@ layer_1/tile_data = PackedInt32Array(-131072, 131074, 0, -65537, 131074, 0, -655
 position = Vector2(25, 29)
 
 [node name="player" parent="." instance=ExtResource("3_xq5bx")]
+z_index = 0
 position = Vector2(70, 31)
 
 [node name="Camera2D" type="Camera2D" parent="."]
