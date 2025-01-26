@@ -51,7 +51,7 @@ texture = ExtResource("2_hv5a7")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_ut65i")
 animation = &"fall"
-frame_progress = 0.558411
+frame_progress = 0.372689
 
 [node name="Area2D" type="Area2D" parent="."]
 

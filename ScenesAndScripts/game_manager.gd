@@ -8,8 +8,6 @@ func _ready():
 	timer.start()
 	
 
-
-
 func _on_timer_timeout():
 	for device in phase1:
 		if device.enabled == false:

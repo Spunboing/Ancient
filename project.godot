@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="Ancient"
-run/main_scene="res://ScenesAndScripts/test_scene(joey).tscn"
+run/main_scene="res://ScenesAndScripts/Level.tscn"
 config/features=PackedStringArray("4.3", "GL Compatibility")
 config/icon="res://icon.svg"
 
@@ -22,6 +22,10 @@ buses/default_bus_layout="res://ScenesAndScripts/default_bus_layout.tres"
 [autoload]
 
 Music="*res://ScenesAndScripts/music.tscn"
+
+[display]
+
+window/stretch/mode="canvas_items"
 
 [input]
 

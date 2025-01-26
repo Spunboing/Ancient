@@ -22,7 +22,7 @@ func check_dir():
 	else:
 		dir = 1
 	need_to_check_direction = false
-	
+
 func _physics_process(delta):
 	if !attack:
 		if position.x <= player.position.x:
@@ -48,7 +48,6 @@ func _physics_process(delta):
 			if need_to_check_direction:
 				check_dir()
 
-			
 func _on_timer_timeout() -> void:
 	position = pos
 	activate = false
