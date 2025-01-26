@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://cr667qr44ad4i"]
+[gd_scene load_steps=20 format=3 uid="uid://qafx3psuvs7o"]
 
 [ext_resource type="Script" path="res://ScenesAndScripts/sword.gd" id="1_4o3wp"]
 [ext_resource type="Texture2D" uid="uid://ueydr78sqjpu" path="res://Art/bigSword.png" id="2_7fg34"]

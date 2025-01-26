@@ -3,7 +3,7 @@
 [ext_resource type="Texture2D" uid="uid://b003uy38i83rs" path="res://Art/Tilset/[Free-Ver.]Tiles.png" id="1_ffevd"]
 [ext_resource type="Texture2D" uid="uid://45f3tskep7qd" path="res://Art/Tilset/[Free-Ver.]Props.png" id="2_f2wak"]
 [ext_resource type="PackedScene" uid="uid://dmtt4aob84w22" path="res://ScenesAndScripts/player.tscn" id="3_4jyg6"]
-[ext_resource type="PackedScene" uid="uid://cr667qr44ad4i" path="res://ScenesAndScripts/sword.tscn" id="4_x2csp"]
+[ext_resource type="PackedScene" uid="uid://qafx3psuvs7o" path="res://ScenesAndScripts/sword.tscn" id="4_x2csp"]
 [ext_resource type="Script" path="res://ScenesAndScripts/game_manager.gd" id="5_cj53m"]
 [ext_resource type="PackedScene" uid="uid://h3agvb754nyg" path="res://ScenesAndScripts/ceiling_tile.tscn" id="6_fhwbp"]
 
