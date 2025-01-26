@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://qafx3psuvs7o" path="res://ScenesAndScripts/sword.tscn" id="4_x2csp"]
 [ext_resource type="Script" path="res://ScenesAndScripts/game_manager.gd" id="5_cj53m"]
 [ext_resource type="PackedScene" uid="uid://h3agvb754nyg" path="res://ScenesAndScripts/ceiling_tile.tscn" id="6_fhwbp"]
-[ext_resource type="PackedScene" uid="uid://bu0querqg727w" path="res://ScenesAndScripts/rat.tscn" id="7_5gnhs"]
+[ext_resource type="PackedScene" uid="uid://ce1pe0iuspk0m" path="res://ScenesAndScripts/rat.tscn" id="7_5gnhs"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5wudx"]
 texture = ExtResource("1_ffevd")

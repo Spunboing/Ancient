@@ -1,9 +1,9 @@
 [gd_scene load_steps=10 format=3 uid="uid://brjmnmepv66xv"]
 
+[ext_resource type="Script" path="res://ScenesAndScripts/game_manager.gd" id="1_3vgde"]
 [ext_resource type="PackedScene" uid="uid://dmtt4aob84w22" path="res://ScenesAndScripts/player.tscn" id="1_5f18j"]
 [ext_resource type="Texture2D" uid="uid://b003uy38i83rs" path="res://Art/Tilset/[Free-Ver.]Tiles.png" id="1_t1tpp"]
 [ext_resource type="Texture2D" uid="uid://45f3tskep7qd" path="res://Art/Tilset/[Free-Ver.]Props.png" id="2_fpisu"]
-[ext_resource type="PackedScene" uid="uid://b6ptowyrp0g00" path="res://ScenesAndScripts/sawblade.tscn" id="2_v2d5f"]
 [ext_resource type="PackedScene" uid="uid://cv7d7p16bi45e" path="res://ScenesAndScripts/spike.tscn" id="5_gfw7l"]
 [ext_resource type="PackedScene" uid="uid://c66mnjkmm4kun" path="res://ScenesAndScripts/crossbow.tscn" id="6_4ebgd"]
 
@@ -176,6 +176,13 @@ sources/3 = SubResource("TileSetAtlasSource_tpx3o")
 
 [node name="testScene2" type="Node2D"]
 
+[node name="gameManager" type="Node2D" parent="." node_paths=PackedStringArray("phase1")]
+script = ExtResource("1_3vgde")
+phase1 = [null]
+
+[node name="Timer" type="Timer" parent="gameManager"]
+wait_time = 10.0
+
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_r2vch")
 rendering_quadrant_size = 24
@@ -224,41 +231,6 @@ position = Vector2(252, -39)
 [node name="spike77" parent="spike7" instance=ExtResource("5_gfw7l")]
 position = Vector2(301, -39)
 
-[node name="spike6" type="Node" parent="."]
-
-[node name="spike56" parent="spike6" instance=ExtResource("5_gfw7l")]
-position = Vector2(-180, -87)
-
-[node name="spike57" parent="spike6" instance=ExtResource("5_gfw7l")]
-position = Vector2(-133, -87)
-
-[node name="spike58" parent="spike6" instance=ExtResource("5_gfw7l")]
-position = Vector2(-84, -87)
-
-[node name="spike59" parent="spike6" instance=ExtResource("5_gfw7l")]
-position = Vector2(-36, -87)
-
-[node name="spike60" parent="spike6" instance=ExtResource("5_gfw7l")]
-position = Vector2(12, -87)
-
-[node name="spike61" parent="spike6" instance=ExtResource("5_gfw7l")]
-position = Vector2(60, -87)
-
-[node name="spike62" parent="spike6" instance=ExtResource("5_gfw7l")]
-position = Vector2(107, -87)
-
-[node name="spike63" parent="spike6" instance=ExtResource("5_gfw7l")]
-position = Vector2(155, -87)
-
-[node name="spike64" parent="spike6" instance=ExtResource("5_gfw7l")]
-position = Vector2(203, -87)
-
-[node name="spike65" parent="spike6" instance=ExtResource("5_gfw7l")]
-position = Vector2(252, -87)
-
-[node name="spike66" parent="spike6" instance=ExtResource("5_gfw7l")]
-position = Vector2(301, -87)
-
 [node name="spike5" type="Node" parent="."]
 
 [node name="spike45" parent="spike5" instance=ExtResource("5_gfw7l")]
@@ -293,41 +265,6 @@ position = Vector2(252, -135)
 
 [node name="spike55" parent="spike5" instance=ExtResource("5_gfw7l")]
 position = Vector2(301, -135)
-
-[node name="spike4" type="Node" parent="."]
-
-[node name="spike34" parent="spike4" instance=ExtResource("5_gfw7l")]
-position = Vector2(-180, -183)
-
-[node name="spike35" parent="spike4" instance=ExtResource("5_gfw7l")]
-position = Vector2(-133, -183)
-
-[node name="spike36" parent="spike4" instance=ExtResource("5_gfw7l")]
-position = Vector2(-84, -183)
-
-[node name="spike37" parent="spike4" instance=ExtResource("5_gfw7l")]
-position = Vector2(-36, -183)
-
-[node name="spike38" parent="spike4" instance=ExtResource("5_gfw7l")]
-position = Vector2(12, -183)
-
-[node name="spike39" parent="spike4" instance=ExtResource("5_gfw7l")]
-position = Vector2(60, -183)
-
-[node name="spike40" parent="spike4" instance=ExtResource("5_gfw7l")]
-position = Vector2(107, -183)
-
-[node name="spike41" parent="spike4" instance=ExtResource("5_gfw7l")]
-position = Vector2(155, -183)
-
-[node name="spike42" parent="spike4" instance=ExtResource("5_gfw7l")]
-position = Vector2(203, -183)
-
-[node name="spike43" parent="spike4" instance=ExtResource("5_gfw7l")]
-position = Vector2(252, -183)
-
-[node name="spike44" parent="spike4" instance=ExtResource("5_gfw7l")]
-position = Vector2(301, -183)
 
 [node name="spike3" type="Node" parent="."]
 
@@ -364,41 +301,6 @@ position = Vector2(252, -231)
 [node name="spike33" parent="spike3" instance=ExtResource("5_gfw7l")]
 position = Vector2(301, -231)
 
-[node name="spike2" type="Node" parent="."]
-
-[node name="spike12" parent="spike2" instance=ExtResource("5_gfw7l")]
-position = Vector2(-180, -279)
-
-[node name="spike13" parent="spike2" instance=ExtResource("5_gfw7l")]
-position = Vector2(-133, -279)
-
-[node name="spike14" parent="spike2" instance=ExtResource("5_gfw7l")]
-position = Vector2(-84, -279)
-
-[node name="spike15" parent="spike2" instance=ExtResource("5_gfw7l")]
-position = Vector2(-36, -279)
-
-[node name="spike16" parent="spike2" instance=ExtResource("5_gfw7l")]
-position = Vector2(12, -279)
-
-[node name="spike17" parent="spike2" instance=ExtResource("5_gfw7l")]
-position = Vector2(60, -279)
-
-[node name="spike18" parent="spike2" instance=ExtResource("5_gfw7l")]
-position = Vector2(107, -279)
-
-[node name="spike19" parent="spike2" instance=ExtResource("5_gfw7l")]
-position = Vector2(155, -279)
-
-[node name="spike20" parent="spike2" instance=ExtResource("5_gfw7l")]
-position = Vector2(203, -279)
-
-[node name="spike21" parent="spike2" instance=ExtResource("5_gfw7l")]
-position = Vector2(252, -279)
-
-[node name="spike22" parent="spike2" instance=ExtResource("5_gfw7l")]
-position = Vector2(301, -279)
-
 [node name="spike" type="Node" parent="."]
 
 [node name="spike" parent="spike" instance=ExtResource("5_gfw7l")]
@@ -434,11 +336,8 @@ position = Vector2(252, -328)
 [node name="spike11" parent="spike" instance=ExtResource("5_gfw7l")]
 position = Vector2(301, -328)
 
-[node name="sawblade" parent="." instance=ExtResource("2_v2d5f")]
-position = Vector2(336, -110)
-
 [node name="player" parent="." instance=ExtResource("1_5f18j")]
-position = Vector2(50, -137)
+position = Vector2(61, -188)
 
 [node name="crossbow" parent="." instance=ExtResource("6_4ebgd")]
 position = Vector2(-203, -275)
@@ -448,3 +347,5 @@ position = Vector2(60, -185)
 zoom = Vector2(1.7, 1.7)
 position_smoothing_enabled = true
 position_smoothing_speed = 6.0
+
+[connection signal="timeout" from="gameManager/Timer" to="gameManager" method="_on_timer_timeout"]

@@ -3,7 +3,8 @@ extends Node2D
 @onready var spike: AnimatedSprite2D = $AnimatedSprite2D
 @onready var warn: Timer = $warn
 @onready var attack: Timer = $attack
-@onready var hitbox: CollisionShape2D = $Area2D/CollisionShape2D
+@onready var hitbox: CollisionShape2D = $killbox/CollisionShape2D
+
 
 
 func _ready():

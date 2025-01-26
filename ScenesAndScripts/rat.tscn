@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://bu0querqg727w"]
+[gd_scene load_steps=6 format=3 uid="uid://ce1pe0iuspk0m"]
 
 [ext_resource type="Texture2D" uid="uid://3u22t307b0dl" path="res://Art/rat.png" id="1_eb75f"]
 [ext_resource type="Script" path="res://ScenesAndScripts/rat.gd" id="2_gfcog"]
@@ -29,7 +29,8 @@ animations = [{
 sprite_frames = SubResource("SpriteFrames_hp0ch")
 animation = &"run"
 autoplay = "run"
-frame_progress = 0.784354
+frame = 1
+frame_progress = 0.207298
 script = ExtResource("2_gfcog")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]

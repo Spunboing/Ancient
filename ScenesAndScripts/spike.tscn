@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cv7d7p16bi45e"]
+[gd_scene load_steps=14 format=3 uid="uid://cv7d7p16bi45e"]
 
 [ext_resource type="Script" path="res://ScenesAndScripts/spike.gd" id="1_djrxq"]
 [ext_resource type="Texture2D" uid="uid://chpq04iusec1p" path="res://Art/traps/Spike Trap.png" id="2_8yocp"]
@@ -80,6 +80,9 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2bo8v"]
 size = Vector2(24, 21)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_f8j04"]
+size = Vector2(6, 6)
+
 [node name="spike" type="Node2D" groups=["trap"]]
 script = ExtResource("1_djrxq")
 
@@ -87,9 +90,9 @@ script = ExtResource("1_djrxq")
 sprite_frames = SubResource("SpriteFrames_eqh64")
 animation = &"retreat"
 
-[node name="Area2D" type="Area2D" parent="."]
+[node name="killbox" type="Area2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="killbox"]
 position = Vector2(0, 3.5)
 shape = SubResource("RectangleShape2D_2bo8v")
 disabled = true
@@ -102,6 +105,12 @@ one_shot = true
 wait_time = 3.0
 one_shot = true
 
-[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
+[node name="activationbox" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="activationbox"]
+position = Vector2(0, 3)
+shape = SubResource("RectangleShape2D_f8j04")
+
+[connection signal="body_entered" from="killbox" to="." method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="warn" to="." method="_on_warn_timeout"]
 [connection signal="timeout" from="attack" to="." method="_on_attack_timeout"]
