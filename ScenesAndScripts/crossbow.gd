@@ -1,4 +1,4 @@
-extends Sprite2D
+extends AnimatedSprite2D
 
 @export var enabled = false
 var arrowPrefab:= preload("res://ScenesAndScripts/arrow.tscn")
@@ -23,6 +23,7 @@ func disable():
 func _process(delta):
 	if enabled == true:
 		if loadState == "unloaded":
+			play("load")
 			startLoadTime = Time.get_ticks_msec()
 			loadState = "loading"
 		elif loadState == "loading":
@@ -30,6 +31,7 @@ func _process(delta):
 				loadState = "loaded"
 		elif loadState == "loaded":
 			print("fire")
+			play("empty")
 			var arrow = arrowPrefab.instantiate()
 			get_tree().current_scene.add_child(arrow)
 			arrow.global_position = global_position
