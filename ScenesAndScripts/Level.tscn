@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://h3agvb754nyg" path="res://ScenesAndScripts/ceiling_tile.tscn" id="4_xd6l8"]
 [ext_resource type="PackedScene" uid="uid://cv7d7p16bi45e" path="res://ScenesAndScripts/spike.tscn" id="5_gfw7l"]
 [ext_resource type="PackedScene" uid="uid://c66mnjkmm4kun" path="res://ScenesAndScripts/crossbow.tscn" id="6_4ebgd"]
-[ext_resource type="PackedScene" uid="uid://bu0querqg727w" path="res://ScenesAndScripts/rat.tscn" id="8_c4f8k"]
+[ext_resource type="PackedScene" uid="uid://ce1pe0iuspk0m" path="res://ScenesAndScripts/rat.tscn" id="8_c4f8k"]
 [ext_resource type="Texture2D" uid="uid://bgchyggmrs3ho" path="res://Art/pngkey.com-red-png-1073093.png" id="10_2xcbu"]
 [ext_resource type="PackedScene" uid="uid://fnd7d85s36g8" path="res://ScenesAndScripts/sawblade.tscn" id="10_pw54l"]
 [ext_resource type="Script" path="res://ScenesAndScripts/cameraScript.gd" id="11_w75h2"]
@@ -392,7 +392,7 @@ default_font_size = 48
 [node name="testScene2" type="Node2D"]
 
 [node name="player" parent="." node_paths=PackedStringArray("cam", "heartSprite", "endGameScreen") instance=ExtResource("1_5f18j")]
-position = Vector2(65, -240)
+position = Vector2(59, -184)
 cam = NodePath("../Camera2D")
 heartSprite = NodePath("../Hearts")
 endGameScreen = NodePath("../Control")
@@ -621,12 +621,15 @@ libraries = {
 }
 
 [node name="sawblade" parent="sawblades" groups=["saw"] instance=ExtResource("10_pw54l")]
+z_index = -2
 position = Vector2(-251, -87)
 
 [node name="sawblade2" parent="sawblades" groups=["saw"] instance=ExtResource("10_pw54l")]
+z_index = -2
 position = Vector2(400, -177)
 
 [node name="sawblade3" parent="sawblades" groups=["saw"] instance=ExtResource("10_pw54l")]
+z_index = -2
 position = Vector2(-251, -287)
 
 [node name="Pngkey_com-red-png-1073093" type="Sprite2D" parent="sawblades"]

@@ -36,6 +36,7 @@ extends Node2D
 @onready var knight_cycle_time: Timer = $knight_cycle_time
 @onready var bat_time: Timer = $bat_time
 @onready var ceiling_time: Timer = $ceiling_time
+@onready var initial_knight_delay: Timer = $initial_knight_delay
 
 @export var sawtime = 5
 @export var knighttime = 15
@@ -45,12 +46,13 @@ extends Node2D
 
 func _ready():
 	spike_spawns()
-	knight_spawns()
-	bat_spawns()
 	ceiling_spawns()
 	rat_spawns()
 	sword_spawns()
 	crossbow_spawns()
+	await get_tree().create_timer(3).timeout
+	knight_spawns()
+
 
 func crossbow_spawns():
 	for i in crossbowarr:
@@ -78,7 +80,9 @@ func ceiling_index():
 func ceiling_spawns():
 	for i in phase*5:
 		var ind = ceiling_index()
+		await get_tree().create_timer(.3).timeout
 		ceilingarr[ind].enable()
+		
 	ceiling_time.start()
 
 func _on_ceiling_time_timeout() -> void:
