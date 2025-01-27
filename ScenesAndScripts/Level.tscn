@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://brjmnmepv66xv"]
+[gd_scene load_steps=19 format=3 uid="uid://brjmnmepv66xv"]
 
 [ext_resource type="Script" path="res://ScenesAndScripts/game_manager.gd" id="1_3vgde"]
 [ext_resource type="PackedScene" uid="uid://dmtt4aob84w22" path="res://ScenesAndScripts/player.tscn" id="1_5f18j"]
@@ -10,7 +10,6 @@
 [ext_resource type="PackedScene" uid="uid://cv7d7p16bi45e" path="res://ScenesAndScripts/spike.tscn" id="5_gfw7l"]
 [ext_resource type="PackedScene" uid="uid://c66mnjkmm4kun" path="res://ScenesAndScripts/crossbow.tscn" id="6_4ebgd"]
 [ext_resource type="PackedScene" uid="uid://ce1pe0iuspk0m" path="res://ScenesAndScripts/rat.tscn" id="8_c4f8k"]
-[ext_resource type="PackedScene" uid="uid://qafx3psuvs7o" path="res://ScenesAndScripts/sword.tscn" id="8_r6hb8"]
 [ext_resource type="PackedScene" uid="uid://fnd7d85s36g8" path="res://ScenesAndScripts/sawblade.tscn" id="10_pw54l"]
 [ext_resource type="Script" path="res://ScenesAndScripts/cameraScript.gd" id="11_w75h2"]
 
@@ -222,7 +221,8 @@ tracks/2/keys = {
 
 [sub_resource type="Animation" id="Animation_by3lo"]
 resource_name = "move"
-length = 6.0
+length = 12.0
+loop_mode = 1
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -242,7 +242,7 @@ tracks/1/path = NodePath("../sawblade2:position")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 3, 6),
+"times": PackedFloat32Array(3, 6, 9),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector2(400, -177), Vector2(-251, -177), Vector2(400, -177)]
@@ -254,7 +254,7 @@ tracks/2/path = NodePath("../sawblade3:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
-"times": PackedFloat32Array(0, 3, 6),
+"times": PackedFloat32Array(6, 9, 12),
 "transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
 "values": [Vector2(-251, -287), Vector2(400, -287), Vector2(-251, -287)]
@@ -451,26 +451,27 @@ rotation = -3.12325
 
 [node name="knight" parent="Knights" groups=["knight"] instance=ExtResource("4_t62va")]
 position = Vector2(-197, 46)
+scale = Vector2(2, 2)
 
 [node name="knight2" parent="Knights" groups=["knight"] instance=ExtResource("4_t62va")]
 position = Vector2(51, 46)
+scale = Vector2(2, 2)
 
 [node name="knight3" parent="Knights" groups=["knight"] instance=ExtResource("4_t62va")]
 position = Vector2(298, 47)
+scale = Vector2(2, 2)
 
 [node name="knight4" parent="Knights" groups=["knight"] instance=ExtResource("4_t62va")]
 position = Vector2(-193, -421)
+scale = Vector2(2, 2)
 
 [node name="knight5" parent="Knights" groups=["knight"] instance=ExtResource("4_t62va")]
 position = Vector2(55, -421)
+scale = Vector2(2, 2)
 
 [node name="knight6" parent="Knights" groups=["knight"] instance=ExtResource("4_t62va")]
 position = Vector2(302, -420)
-
-[node name="swords" type="Node" parent="."]
-
-[node name="Sword" parent="swords" groups=["sword"] instance=ExtResource("8_r6hb8")]
-position = Vector2(-155, -134)
+scale = Vector2(2, 2)
 
 [node name="rats" type="Node" parent="."]
 
@@ -659,7 +660,7 @@ script = ExtResource("1_3vgde")
 phase1 = [null]
 
 [node name="phase_time" type="Timer" parent="gameManager"]
-wait_time = 45.0
+wait_time = 5.0
 autostart = true
 
 [node name="spikecyctime" type="Timer" parent="gameManager"]

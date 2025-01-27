@@ -5,6 +5,7 @@ extends CharacterBody2D
 @export var activate = false
 @export var gogo = false
 
+@onready var body: AnimatedSprite2D = $AnimatedSprite2D
 @onready var player: CharacterBody2D = $"../../player"
 @onready var knight: CharacterBody2D = $"."
 @onready var timer: Timer = $Timer
@@ -29,9 +30,9 @@ func _physics_process(delta):
 	if gogo:
 		if !attack:
 			if position.x <= player.position.x:
-				scale.x = 1
+				body.flip_h = false
 			else:
-				scale.x = -1
+				body.flip_h = true
 
 		if activate:
 			if position.y >= player.position.y -3 && position.y <= player.position.y + 3:
