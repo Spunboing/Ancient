@@ -83,6 +83,8 @@ func gameover():
 	endGameScreen.visible = true
 	endGameScreen.find_child("seconds").text = "\n[center]"+str(round(aliveTime))+"[/center]"
 	increaseTime = false
+	await get_tree().create_timer(5).timeout
+	get_tree().reload_current_scene()
 	
 
 
