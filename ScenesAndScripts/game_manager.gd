@@ -21,6 +21,9 @@ extends Node2D
 #ceiling array
 @onready var ceilingarr = get_tree().get_nodes_in_group("ceiling")
 
+#rat array
+@onready var ratarr = get_tree().get_nodes_in_group("rat")
+
 #Timers
 @onready var phase_time: Timer = $phase_time
 @onready var spikecyctime: Timer = $spikecyctime
@@ -39,6 +42,12 @@ func _ready():
 	knight_spawns()
 	bat_spawns()
 	ceiling_spawns()
+	rat_spawns()
+
+func rat_spawns():
+	for i in ratarr:
+		print(i)
+		i.enable()
 
 func saw_spawns():
 	for i in sawarr:
