@@ -8,6 +8,12 @@ extends Node2D
 @onready var r3arr = get_tree().get_nodes_in_group("sr3")
 @onready var r4arr = get_tree().get_nodes_in_group("sr4")
 
+#crossbow array
+@onready var crossbowarr = get_tree().get_nodes_in_group("crossbow")
+
+#sword array
+@onready var swordarr = get_tree().get_nodes_in_group("sword")
+
 #saw player
 @onready var sawplayer: AnimationPlayer = $"../sawblades/AnimationPlayer"
 @onready var sawarr = get_tree().get_nodes_in_group("saw")
@@ -43,6 +49,17 @@ func _ready():
 	bat_spawns()
 	ceiling_spawns()
 	rat_spawns()
+	sword_spawns()
+	crossbow_spawns()
+
+func crossbow_spawns():
+	for i in crossbowarr:
+		i.enable()
+
+func sword_spawns():
+	for i in swordarr:
+		print(i)
+		i.enable()
 
 func rat_spawns():
 	for i in ratarr:

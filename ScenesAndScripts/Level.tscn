@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://brjmnmepv66xv"]
+[gd_scene load_steps=20 format=3 uid="uid://brjmnmepv66xv"]
 
 [ext_resource type="Script" path="res://ScenesAndScripts/game_manager.gd" id="1_3vgde"]
 [ext_resource type="PackedScene" uid="uid://dmtt4aob84w22" path="res://ScenesAndScripts/player.tscn" id="1_5f18j"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://cv7d7p16bi45e" path="res://ScenesAndScripts/spike.tscn" id="5_gfw7l"]
 [ext_resource type="PackedScene" uid="uid://c66mnjkmm4kun" path="res://ScenesAndScripts/crossbow.tscn" id="6_4ebgd"]
 [ext_resource type="PackedScene" uid="uid://ce1pe0iuspk0m" path="res://ScenesAndScripts/rat.tscn" id="8_c4f8k"]
+[ext_resource type="PackedScene" uid="uid://qafx3psuvs7o" path="res://ScenesAndScripts/sword.tscn" id="8_r6hb8"]
 [ext_resource type="PackedScene" uid="uid://fnd7d85s36g8" path="res://ScenesAndScripts/sawblade.tscn" id="10_pw54l"]
 [ext_resource type="Script" path="res://ScenesAndScripts/cameraScript.gd" id="11_w75h2"]
 
@@ -432,27 +433,20 @@ position = Vector2(17, -398)
 
 [node name="Crossbows" type="Node" parent="."]
 
-[node name="crossbow" parent="Crossbows" instance=ExtResource("6_4ebgd")]
-position = Vector2(-203, -275)
+[node name="crossbow" parent="Crossbows" groups=["crossbow"] instance=ExtResource("6_4ebgd")]
+position = Vector2(-207, -325)
 
-[node name="crossbow2" parent="Crossbows" instance=ExtResource("6_4ebgd")]
-position = Vector2(-207, -177)
-frame = 3
+[node name="crossbow2" parent="Crossbows" groups=["crossbow"] instance=ExtResource("6_4ebgd")]
+position = Vector2(-204, -227)
+animation = &"load"
+frame = 13
 frame_progress = 1.0
 
-[node name="crossbow3" parent="Crossbows" instance=ExtResource("6_4ebgd")]
-position = Vector2(-206, -85)
+[node name="crossbow3" parent="Crossbows" groups=["crossbow"] instance=ExtResource("6_4ebgd")]
+position = Vector2(-206, -133)
 
-[node name="crossbow4" parent="Crossbows" instance=ExtResource("6_4ebgd")]
-position = Vector2(325, -179)
-rotation = -3.12325
-
-[node name="crossbow6" parent="Crossbows" instance=ExtResource("6_4ebgd")]
-position = Vector2(328, -85)
-rotation = -3.12325
-
-[node name="crossbow5" parent="Crossbows" instance=ExtResource("6_4ebgd")]
-position = Vector2(327, -298)
+[node name="crossbow4" parent="Crossbows" groups=["crossbow"] instance=ExtResource("6_4ebgd")]
+position = Vector2(-207, -30)
 rotation = -3.12325
 
 [node name="Knights" type="Node" parent="."]
@@ -475,16 +469,24 @@ position = Vector2(55, -421)
 [node name="knight6" parent="Knights" groups=["knight"] instance=ExtResource("4_t62va")]
 position = Vector2(302, -420)
 
+[node name="swords" type="Node" parent="."]
+
+[node name="Sword" parent="swords" groups=["sword"] instance=ExtResource("8_r6hb8")]
+position = Vector2(-155, -134)
+
 [node name="rats" type="Node" parent="."]
 
 [node name="Rat" parent="rats" groups=["rat"] instance=ExtResource("8_c4f8k")]
 position = Vector2(-205, -58)
+SPEED = 50.0
 
 [node name="Rat2" parent="rats" groups=["rat"] instance=ExtResource("8_c4f8k")]
 position = Vector2(299, -183)
+SPEED = 50.0
 
 [node name="Rat3" parent="rats" groups=["rat"] instance=ExtResource("8_c4f8k")]
 position = Vector2(-179, -277)
+SPEED = 50.0
 
 [node name="sawblades" type="Node" parent="."]
 
