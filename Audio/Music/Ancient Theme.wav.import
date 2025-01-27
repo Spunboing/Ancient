@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://d371l62fasj8w"
-path="res://.godot/imported/Ancient Theme.wav-73be84b617be65cc92a493db6911d137.sample"
+path="res://.godot/imported/Ancient Theme.wav-aaa443a3eb6c804995f707c2a5089d50.sample"
 
 [deps]
 
-source_file="res://Music/Ancient Theme.wav"
-dest_files=["res://.godot/imported/Ancient Theme.wav-73be84b617be65cc92a493db6911d137.sample"]
+source_file="res://Audio/Music/Ancient Theme.wav"
+dest_files=["res://.godot/imported/Ancient Theme.wav-aaa443a3eb6c804995f707c2a5089d50.sample"]
 
 [params]
 

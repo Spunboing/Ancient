@@ -68,7 +68,7 @@ func rat_spawns():
 
 func saw_spawns():
 	for i in sawarr:
-		i.enable
+		i.enable()
 	sawplayer.play("move")
 	await get_tree().create_timer(sawtime).timeout
 

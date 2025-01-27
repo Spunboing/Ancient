@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://bnt2sfy1f2v1e"
-path="res://.godot/imported/CellingTileFalling.wav-38cf7d9d1aee75564fa1d44b9713ca0f.sample"
+path="res://.godot/imported/CellingTileFalling.wav-16ede759ea2397fb598229925367de03.sample"
 
 [deps]
 
-source_file="res://SFX/CellingTileFalling.wav"
-dest_files=["res://.godot/imported/CellingTileFalling.wav-38cf7d9d1aee75564fa1d44b9713ca0f.sample"]
+source_file="res://Audio/SFX/CellingTileFalling.wav"
+dest_files=["res://.godot/imported/CellingTileFalling.wav-16ede759ea2397fb598229925367de03.sample"]
 
 [params]
 

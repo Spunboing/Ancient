@@ -2,6 +2,7 @@ extends Node2D
 
 @onready var animation = $AnimatedSprite2D
 @export var enabled: bool = false
+@onready var sawSFX: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 
 func _animation():
@@ -16,6 +17,8 @@ func enable():
 	visible = true
 	enabled = true
 	$AudioStreamPlayer2D.play()
+	await get_tree().create_timer(3).timeout
+	sawSFX.play()
 	
 func disable():
 	visible = false

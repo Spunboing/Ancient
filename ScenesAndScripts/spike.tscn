@@ -1,7 +1,8 @@
-[gd_scene load_steps=13 format=3 uid="uid://cv7d7p16bi45e"]
+[gd_scene load_steps=14 format=3 uid="uid://cv7d7p16bi45e"]
 
 [ext_resource type="Script" path="res://ScenesAndScripts/spike.gd" id="1_djrxq"]
 [ext_resource type="Texture2D" uid="uid://chpq04iusec1p" path="res://Art/traps/Spike Trap.png" id="2_8yocp"]
+[ext_resource type="AudioStream" uid="uid://dp75nvpvyf7dr" path="res://Audio/SFX/Spike (1)-[AudioTrimmer.com].wav" id="3_nrfj8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_xmn88"]
 atlas = ExtResource("2_8yocp")
@@ -101,6 +102,11 @@ one_shot = true
 [node name="attack" type="Timer" parent="."]
 wait_time = 3.0
 one_shot = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_nrfj8")
+volume_db = -10.0
+bus = &"SFX"
 
 [connection signal="body_entered" from="killbox" to="." method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="warn" to="." method="_on_warn_timeout"]

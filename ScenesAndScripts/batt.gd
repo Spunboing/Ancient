@@ -33,7 +33,7 @@ func _process(delta):
 			velocity = target_pos*speed
 			move_and_slide()
 			look_at(player_pos)
-			rotation = rotation - (PI/2)
+			rotation = rotation - (3*PI/2)
 
 func _physics_process(delta):
 	if goaway:

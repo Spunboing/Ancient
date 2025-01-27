@@ -3,12 +3,12 @@
 importer="wav"
 type="AudioStreamWAV"
 uid="uid://cl8cqkji47txp"
-path="res://.godot/imported/Last Stand.wav-b13e7d5b0e097a2e3490b91163666313.sample"
+path="res://.godot/imported/Last Stand.wav-003421d4200d9bba7f20611e767d5cfd.sample"
 
 [deps]
 
-source_file="res://Music/Last Stand.wav"
-dest_files=["res://.godot/imported/Last Stand.wav-b13e7d5b0e097a2e3490b91163666313.sample"]
+source_file="res://Audio/Music/Last Stand.wav"
+dest_files=["res://.godot/imported/Last Stand.wav-003421d4200d9bba7f20611e767d5cfd.sample"]
 
 [params]
 

@@ -4,6 +4,7 @@ extends Node2D
 @onready var warn: Timer = $warn
 @onready var attack: Timer = $attack
 @onready var hitbox: CollisionShape2D = $killbox/CollisionShape2D
+@onready var spikeSFX: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
@@ -18,6 +19,7 @@ func start():
 	warn.start()
 
 func _on_warn_timeout() -> void:
+	spikeSFX.play()
 	hitbox.disabled = false
 	spike.play("attack")
 	attack.start()

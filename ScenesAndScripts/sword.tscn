@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://ScenesAndScripts/sword.gd" id="1_4o3wp"]
 [ext_resource type="Texture2D" uid="uid://ueydr78sqjpu" path="res://Art/bigSword.png" id="2_7fg34"]
-[ext_resource type="AudioStream" uid="uid://b5rdi6dinmuc5" path="res://SFX/swordSwing.mp3" id="3_8i0m8"]
+[ext_resource type="AudioStream" uid="uid://b5rdi6dinmuc5" path="res://Audio/SFX/swordSwing.mp3" id="3_8i0m8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_bdn8x"]
 atlas = ExtResource("2_7fg34")
@@ -143,5 +143,6 @@ shape = SubResource("RectangleShape2D_5n0ui")
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("3_8i0m8")
 volume_db = 7.354
+bus = &"SFX"
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
