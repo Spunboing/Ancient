@@ -108,7 +108,12 @@ func knight_index():
 	return int(randf_range(0,knightarr.size()-1))
 	
 func knight_spawns():
-	for i in phase:
+	var loop
+	if phase == 1:
+		loop = 1
+	else:
+		loop = 2
+	for i in loop:
 		var ind = knight_index()
 		if !(knightarr[ind].gogo):
 			print("hi")
@@ -140,5 +145,6 @@ func _on_phase_time_timeout() -> void:
 	if phase == 2:
 		bat_spawns()
 	if phase == 3:
+		knighttime = 15
 		saw_spawns()
 	print ("now on phase " + str(phase))
