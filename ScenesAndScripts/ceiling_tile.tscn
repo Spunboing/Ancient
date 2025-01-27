@@ -53,6 +53,7 @@ offsets = PackedFloat32Array(0.666667, 0.876812)
 colors = PackedColorArray(1, 1, 1, 1, 1, 1, 1, 0)
 
 [node name="CeilingTile" type="Node2D"]
+z_index = -2
 script = ExtResource("1_ke1f6")
 
 [node name="shadow" type="Sprite2D" parent="."]

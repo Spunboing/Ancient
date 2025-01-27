@@ -2,12 +2,12 @@
 
 [ext_resource type="Script" path="res://ScenesAndScripts/player.gd" id="1_1uxog"]
 [ext_resource type="Texture2D" uid="uid://dgcb3mv0q2rk6" path="res://Art/Tilset/characterAnimationSheet.png" id="3_h1eie"]
-[ext_resource type="AudioStream" uid="uid://orvixo4unmsj" path="res://SFX/damage.wav" id="3_yt2dj"]
-[ext_resource type="AudioStream" uid="uid://d371l62fasj8w" path="res://Music/Ancient Theme.wav" id="4_rtdkp"]
-[ext_resource type="AudioStream" uid="uid://cl8cqkji47txp" path="res://Music/Last Stand.wav" id="5_bjcrr"]
+[ext_resource type="AudioStream" uid="uid://orvixo4unmsj" path="res://Audio/SFX/damage.wav" id="3_yt2dj"]
+[ext_resource type="AudioStream" uid="uid://d371l62fasj8w" path="res://Audio/Music/Ancient Theme.wav" id="4_rtdkp"]
+[ext_resource type="AudioStream" uid="uid://cl8cqkji47txp" path="res://Audio/Music/Last Stand.wav" id="5_bjcrr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_06y5n"]
-size = Vector2(10, 15)
+size = Vector2(10, 18)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_vjheg"]
 atlas = ExtResource("3_h1eie")
@@ -152,7 +152,7 @@ script = ExtResource("1_1uxog")
 visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(0, 4.5)
+position = Vector2(0, 3)
 shape = SubResource("RectangleShape2D_06y5n")
 
 [node name="i-frames" type="Timer" parent="."]

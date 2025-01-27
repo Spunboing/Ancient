@@ -82,6 +82,7 @@ animations = [{
 size = Vector2(20, 18)
 
 [node name="spike" type="Node2D" groups=["trap"]]
+z_index = -3
 script = ExtResource("1_djrxq")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
