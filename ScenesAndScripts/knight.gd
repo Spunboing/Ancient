@@ -53,6 +53,7 @@ func _physics_process(delta):
 					check_dir()
 
 func _on_timer_timeout() -> void:
+	attack = false
 	gogo = false
 	position = pos
 	activate = false
