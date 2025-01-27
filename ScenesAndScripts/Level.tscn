@@ -1,13 +1,15 @@
-[gd_scene load_steps=12 format=3 uid="uid://brjmnmepv66xv"]
+[gd_scene load_steps=17 format=3 uid="uid://brjmnmepv66xv"]
 
 [ext_resource type="Script" path="res://ScenesAndScripts/game_manager.gd" id="1_3vgde"]
 [ext_resource type="PackedScene" uid="uid://dmtt4aob84w22" path="res://ScenesAndScripts/player.tscn" id="1_5f18j"]
 [ext_resource type="Texture2D" uid="uid://b003uy38i83rs" path="res://Art/Tilset/[Free-Ver.]Tiles.png" id="1_t1tpp"]
 [ext_resource type="Texture2D" uid="uid://45f3tskep7qd" path="res://Art/Tilset/[Free-Ver.]Props.png" id="2_fpisu"]
-[ext_resource type="PackedScene" path="res://ScenesAndScripts/batt.tscn" id="4_5782m"]
+[ext_resource type="PackedScene" uid="uid://kcxohejrattg" path="res://ScenesAndScripts/batt.tscn" id="4_5782m"]
 [ext_resource type="PackedScene" uid="uid://dkg2ex3k1iiwl" path="res://ScenesAndScripts/knight.tscn" id="4_t62va"]
+[ext_resource type="PackedScene" uid="uid://h3agvb754nyg" path="res://ScenesAndScripts/ceiling_tile.tscn" id="4_xd6l8"]
 [ext_resource type="PackedScene" uid="uid://cv7d7p16bi45e" path="res://ScenesAndScripts/spike.tscn" id="5_gfw7l"]
 [ext_resource type="PackedScene" uid="uid://c66mnjkmm4kun" path="res://ScenesAndScripts/crossbow.tscn" id="6_4ebgd"]
+[ext_resource type="PackedScene" uid="uid://fnd7d85s36g8" path="res://ScenesAndScripts/sawblade.tscn" id="10_pw54l"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5wudx"]
 texture = ExtResource("1_t1tpp")
@@ -176,6 +178,91 @@ physics_layer_0/collision_layer = 1
 sources/2 = SubResource("TileSetAtlasSource_5wudx")
 sources/3 = SubResource("TileSetAtlasSource_tpx3o")
 
+[sub_resource type="Animation" id="Animation_by3lo"]
+resource_name = "move"
+length = 6.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3, 6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-251, -87), Vector2(400, -79), Vector2(-251, -79)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../sawblade2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3, 6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(400, -177), Vector2(-251, -177), Vector2(400, -177)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../sawblade3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 3, 6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Vector2(-251, -287), Vector2(400, -287), Vector2(-251, -287)]
+}
+
+[sub_resource type="Animation" id="Animation_4s1ht"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-251, -87)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("../sawblade2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(400, -177)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("../sawblade3:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-251, -287)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_47x1v"]
+_data = {
+"RESET": SubResource("Animation_4s1ht"),
+"move": SubResource("Animation_by3lo")
+}
+
 [node name="testScene2" type="Node2D"]
 
 [node name="player" parent="." instance=ExtResource("1_5f18j")]
@@ -197,6 +284,140 @@ layer_2/z_index = 1
 layer_2/tile_data = PackedInt32Array(-983045, 131074, 0, -983044, 131074, 0, -983043, 131074, 0, -983042, 131074, 0, -983041, 131074, 0, -1048576, 131074, 0, -1048575, 131074, 0, -1048574, 131074, 0, -1048573, 131074, 0, -1048572, 131074, 0, -1048571, 131074, 0, -1048570, 131074, 0, -1048569, 131074, 0, -1048568, 131074, 0, -1048567, 131074, 0, -5, 131074, 4, -4, 131074, 4, -3, 131074, 4, -2, 131074, 4, -1, 131074, 4, -65536, 131074, 4, -65535, 131074, 4, -65534, 131074, 4, -65533, 131074, 4, -65532, 131074, 4, -65531, 131074, 4, -65530, 131074, 4, -65529, 131074, 4, -65528, 131074, 4, -65527, 131074, 4, -983050, 2, 1, -917514, 2, 2, -851978, 2, 2, -786442, 2, 2, -720906, 2, 2, -655370, 2, 2, -589834, 2, 2, -524298, 2, 2, -458762, 2, 2, -393226, 2, 2, -327690, 2, 2, -262154, 2, 2, -196618, 2, 2, -131082, 2, 2, -65546, 2, 2, -10, 2, 2, -1048562, 196610, 0, -983026, 262146, 2, -917490, 262146, 2, -851954, 262146, 2, -786418, 262146, 2, -720882, 262146, 3, -655346, 262146, 3, -589810, 262146, 3, -524274, 262146, 3, -458738, 262146, 3, -393202, 262146, 3, -327666, 262146, 3, -262130, 262146, 3, -196594, 262146, 3, -131058, 262146, 3, -65522, 262146, 3, -9, 131074, 4, -8, 131074, 4, -7, 131074, 4, -6, 131074, 4, -65526, 131074, 4, -65525, 131074, 4, -65524, 131074, 4, -65523, 131074, 4, -1048566, 131074, 0, -1048565, 131074, 0, -1048564, 131074, 0, -1048563, 131074, 0, -983049, 131074, 0, -983048, 131074, 0, -983047, 131074, 0, -983046, 131074, 0)
 layer_3/name = "Traps"
 layer_3/z_index = 2
+
+[node name="CeilingTiles" type="Node" parent="."]
+
+[node name="CeilingTile" parent="CeilingTiles" groups=["ceiling"] instance=ExtResource("4_xd6l8")]
+visible = false
+position = Vector2(37, -302)
+
+[node name="CeilingTile2" parent="CeilingTiles" groups=["ceiling"] instance=ExtResource("4_xd6l8")]
+visible = false
+position = Vector2(-181, -395)
+
+[node name="CeilingTile3" parent="CeilingTiles" groups=["ceiling"] instance=ExtResource("4_xd6l8")]
+visible = false
+position = Vector2(-83, -396)
+
+[node name="CeilingTile4" parent="CeilingTiles" groups=["ceiling"] instance=ExtResource("4_xd6l8")]
+visible = false
+position = Vector2(60, -394)
+
+[node name="CeilingTile5" parent="CeilingTiles" groups=["ceiling"] instance=ExtResource("4_xd6l8")]
+visible = false
+position = Vector2(132, -347)
+
+[node name="CeilingTile6" parent="CeilingTiles" groups=["ceiling"] instance=ExtResource("4_xd6l8")]
+visible = false
+position = Vector2(279, -396)
+
+[node name="CeilingTile7" parent="CeilingTiles" groups=["ceiling"] instance=ExtResource("4_xd6l8")]
+visible = false
+position = Vector2(-132, -325)
+
+[node name="CeilingTile8" parent="CeilingTiles" groups=["ceiling"] instance=ExtResource("4_xd6l8")]
+visible = false
+position = Vector2(-181, -299)
+
+[node name="CeilingTile9" parent="CeilingTiles" groups=["ceiling"] instance=ExtResource("4_xd6l8")]
+visible = false
+position = Vector2(-60, -325)
+
+[node name="CeilingTile10" parent="CeilingTiles" groups=["ceiling"] instance=ExtResource("4_xd6l8")]
+visible = false
+position = Vector2(-60, -247)
+
+[node name="CeilingTile11" parent="CeilingTiles" groups=["ceiling"] instance=ExtResource("4_xd6l8")]
+visible = false
+position = Vector2(-156, -252)
+
+[node name="CeilingTile12" parent="CeilingTiles" groups=["ceiling"] instance=ExtResource("4_xd6l8")]
+visible = false
+position = Vector2(12, -204)
+
+[node name="CeilingTile13" parent="CeilingTiles" groups=["ceiling"] instance=ExtResource("4_xd6l8")]
+visible = false
+position = Vector2(84, -230)
+
+[node name="CeilingTile14" parent="CeilingTiles" groups=["ceiling"] instance=ExtResource("4_xd6l8")]
+visible = false
+position = Vector2(-109, -133)
+
+[node name="CeilingTile15" parent="CeilingTiles" groups=["ceiling"] instance=ExtResource("4_xd6l8")]
+visible = false
+position = Vector2(-179, -154)
+
+[node name="CeilingTile16" parent="CeilingTiles" groups=["ceiling"] instance=ExtResource("4_xd6l8")]
+visible = false
+position = Vector2(203, -299)
+
+[node name="CeilingTile17" parent="CeilingTiles" groups=["ceiling"] instance=ExtResource("4_xd6l8")]
+visible = false
+position = Vector2(300, -324)
+
+[node name="CeilingTile18" parent="CeilingTiles" groups=["ceiling"] instance=ExtResource("4_xd6l8")]
+visible = false
+position = Vector2(157, -204)
+
+[node name="CeilingTile19" parent="CeilingTiles" groups=["ceiling"] instance=ExtResource("4_xd6l8")]
+visible = false
+position = Vector2(-37, -107)
+
+[node name="CeilingTile20" parent="CeilingTiles" groups=["ceiling"] instance=ExtResource("4_xd6l8")]
+visible = false
+position = Vector2(36, -132)
+
+[node name="CeilingTile21" parent="CeilingTiles" groups=["ceiling"] instance=ExtResource("4_xd6l8")]
+visible = false
+position = Vector2(154, -108)
+
+[node name="CeilingTile22" parent="CeilingTiles" groups=["ceiling"] instance=ExtResource("4_xd6l8")]
+visible = false
+position = Vector2(227, -133)
+
+[node name="CeilingTile23" parent="CeilingTiles" groups=["ceiling"] instance=ExtResource("4_xd6l8")]
+visible = false
+position = Vector2(229, -227)
+
+[node name="CeilingTile24" parent="CeilingTiles" groups=["ceiling"] instance=ExtResource("4_xd6l8")]
+visible = false
+position = Vector2(275, -106)
+
+[node name="CeilingTile25" parent="CeilingTiles" groups=["ceiling"] instance=ExtResource("4_xd6l8")]
+visible = false
+position = Vector2(327, -85)
+
+[node name="CeilingTile26" parent="CeilingTiles" groups=["ceiling"] instance=ExtResource("4_xd6l8")]
+visible = false
+position = Vector2(302, -204)
+
+[node name="CeilingTile27" parent="CeilingTiles" groups=["ceiling"] instance=ExtResource("4_xd6l8")]
+visible = false
+position = Vector2(275, -253)
+
+[node name="CeilingTile28" parent="CeilingTiles" groups=["ceiling"] instance=ExtResource("4_xd6l8")]
+visible = false
+position = Vector2(131, -298)
+
+[node name="CeilingTile29" parent="CeilingTiles" groups=["ceiling"] instance=ExtResource("4_xd6l8")]
+visible = false
+position = Vector2(-108, -205)
+
+[node name="CeilingTile30" parent="CeilingTiles" groups=["ceiling"] instance=ExtResource("4_xd6l8")]
+visible = false
+position = Vector2(181, -395)
+
+[node name="CeilingTile31" parent="CeilingTiles" groups=["ceiling"] instance=ExtResource("4_xd6l8")]
+visible = false
+position = Vector2(-156, -81)
+
+[node name="CeilingTile32" parent="CeilingTiles" groups=["ceiling"] instance=ExtResource("4_xd6l8")]
+visible = false
+position = Vector2(-12, -346)
+
+[node name="CeilingTile33" parent="CeilingTiles" groups=["ceiling"] instance=ExtResource("4_xd6l8")]
+visible = false
+position = Vector2(17, -398)
 
 [node name="Bats" type="Node" parent="."]
 
@@ -251,148 +472,165 @@ position = Vector2(55, -421)
 [node name="knight6" parent="Knights" groups=["knight"] instance=ExtResource("4_t62va")]
 position = Vector2(302, -420)
 
-[node name="Spike Things" type="Node" parent="."]
+[node name="sawblades" type="Node" parent="."]
 
-[node name="Individual Spikes" type="Node" parent="Spike Things"]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="sawblades"]
+root_node = NodePath("../sawblade")
+libraries = {
+"": SubResource("AnimationLibrary_47x1v")
+}
 
-[node name="spikerow4" type="Node" parent="Spike Things/Individual Spikes"]
+[node name="sawblade" parent="sawblades" groups=["saw"] instance=ExtResource("10_pw54l")]
+position = Vector2(-251, -87)
 
-[node name="spike67" parent="Spike Things/Individual Spikes/spikerow4" groups=["sr4"] instance=ExtResource("5_gfw7l")]
+[node name="sawblade2" parent="sawblades" groups=["saw"] instance=ExtResource("10_pw54l")]
+position = Vector2(400, -177)
+
+[node name="sawblade3" parent="sawblades" groups=["saw"] instance=ExtResource("10_pw54l")]
+position = Vector2(-251, -287)
+
+[node name="Spike" type="Node" parent="."]
+
+[node name="Individual Spikes" type="Node" parent="Spike"]
+
+[node name="spikerow4" type="Node" parent="Spike/Individual Spikes"]
+
+[node name="spike67" parent="Spike/Individual Spikes/spikerow4" groups=["sr4"] instance=ExtResource("5_gfw7l")]
 position = Vector2(-180, -39)
 
-[node name="spike68" parent="Spike Things/Individual Spikes/spikerow4" groups=["sr4"] instance=ExtResource("5_gfw7l")]
+[node name="spike68" parent="Spike/Individual Spikes/spikerow4" groups=["sr4"] instance=ExtResource("5_gfw7l")]
 position = Vector2(-133, -39)
 
-[node name="spike69" parent="Spike Things/Individual Spikes/spikerow4" groups=["sr4"] instance=ExtResource("5_gfw7l")]
+[node name="spike69" parent="Spike/Individual Spikes/spikerow4" groups=["sr4"] instance=ExtResource("5_gfw7l")]
 position = Vector2(-84, -39)
 
-[node name="spike70" parent="Spike Things/Individual Spikes/spikerow4" groups=["sr4"] instance=ExtResource("5_gfw7l")]
+[node name="spike70" parent="Spike/Individual Spikes/spikerow4" groups=["sr4"] instance=ExtResource("5_gfw7l")]
 position = Vector2(-36, -39)
 
-[node name="spike71" parent="Spike Things/Individual Spikes/spikerow4" groups=["sr4"] instance=ExtResource("5_gfw7l")]
+[node name="spike71" parent="Spike/Individual Spikes/spikerow4" groups=["sr4"] instance=ExtResource("5_gfw7l")]
 position = Vector2(12, -39)
 
-[node name="spike72" parent="Spike Things/Individual Spikes/spikerow4" groups=["sr4"] instance=ExtResource("5_gfw7l")]
+[node name="spike72" parent="Spike/Individual Spikes/spikerow4" groups=["sr4"] instance=ExtResource("5_gfw7l")]
 position = Vector2(60, -39)
 
-[node name="spike73" parent="Spike Things/Individual Spikes/spikerow4" groups=["sr4"] instance=ExtResource("5_gfw7l")]
+[node name="spike73" parent="Spike/Individual Spikes/spikerow4" groups=["sr4"] instance=ExtResource("5_gfw7l")]
 position = Vector2(107, -39)
 
-[node name="spike74" parent="Spike Things/Individual Spikes/spikerow4" groups=["sr4"] instance=ExtResource("5_gfw7l")]
+[node name="spike74" parent="Spike/Individual Spikes/spikerow4" groups=["sr4"] instance=ExtResource("5_gfw7l")]
 position = Vector2(155, -39)
 
-[node name="spike75" parent="Spike Things/Individual Spikes/spikerow4" groups=["sr4"] instance=ExtResource("5_gfw7l")]
+[node name="spike75" parent="Spike/Individual Spikes/spikerow4" groups=["sr4"] instance=ExtResource("5_gfw7l")]
 position = Vector2(203, -39)
 
-[node name="spike76" parent="Spike Things/Individual Spikes/spikerow4" groups=["sr4"] instance=ExtResource("5_gfw7l")]
+[node name="spike76" parent="Spike/Individual Spikes/spikerow4" groups=["sr4"] instance=ExtResource("5_gfw7l")]
 position = Vector2(252, -39)
 
-[node name="spike77" parent="Spike Things/Individual Spikes/spikerow4" groups=["sr4"] instance=ExtResource("5_gfw7l")]
+[node name="spike77" parent="Spike/Individual Spikes/spikerow4" groups=["sr4"] instance=ExtResource("5_gfw7l")]
 position = Vector2(301, -39)
 
-[node name="spikerow3" type="Node" parent="Spike Things/Individual Spikes"]
+[node name="spikerow3" type="Node" parent="Spike/Individual Spikes"]
 
-[node name="spike45" parent="Spike Things/Individual Spikes/spikerow3" groups=["sr3"] instance=ExtResource("5_gfw7l")]
+[node name="spike45" parent="Spike/Individual Spikes/spikerow3" groups=["sr3"] instance=ExtResource("5_gfw7l")]
 position = Vector2(-180, -135)
 
-[node name="spike46" parent="Spike Things/Individual Spikes/spikerow3" groups=["sr3"] instance=ExtResource("5_gfw7l")]
+[node name="spike46" parent="Spike/Individual Spikes/spikerow3" groups=["sr3"] instance=ExtResource("5_gfw7l")]
 position = Vector2(-133, -135)
 
-[node name="spike47" parent="Spike Things/Individual Spikes/spikerow3" groups=["sr3"] instance=ExtResource("5_gfw7l")]
+[node name="spike47" parent="Spike/Individual Spikes/spikerow3" groups=["sr3"] instance=ExtResource("5_gfw7l")]
 position = Vector2(-84, -135)
 
-[node name="spike48" parent="Spike Things/Individual Spikes/spikerow3" groups=["sr3"] instance=ExtResource("5_gfw7l")]
+[node name="spike48" parent="Spike/Individual Spikes/spikerow3" groups=["sr3"] instance=ExtResource("5_gfw7l")]
 position = Vector2(-36, -135)
 
-[node name="spike49" parent="Spike Things/Individual Spikes/spikerow3" groups=["sr3"] instance=ExtResource("5_gfw7l")]
+[node name="spike49" parent="Spike/Individual Spikes/spikerow3" groups=["sr3"] instance=ExtResource("5_gfw7l")]
 position = Vector2(12, -135)
 
-[node name="spike50" parent="Spike Things/Individual Spikes/spikerow3" groups=["sr3"] instance=ExtResource("5_gfw7l")]
+[node name="spike50" parent="Spike/Individual Spikes/spikerow3" groups=["sr3"] instance=ExtResource("5_gfw7l")]
 position = Vector2(60, -135)
 
-[node name="spike51" parent="Spike Things/Individual Spikes/spikerow3" groups=["sr3"] instance=ExtResource("5_gfw7l")]
+[node name="spike51" parent="Spike/Individual Spikes/spikerow3" groups=["sr3"] instance=ExtResource("5_gfw7l")]
 position = Vector2(107, -135)
 
-[node name="spike52" parent="Spike Things/Individual Spikes/spikerow3" groups=["sr3"] instance=ExtResource("5_gfw7l")]
+[node name="spike52" parent="Spike/Individual Spikes/spikerow3" groups=["sr3"] instance=ExtResource("5_gfw7l")]
 position = Vector2(155, -135)
 
-[node name="spike53" parent="Spike Things/Individual Spikes/spikerow3" groups=["sr3"] instance=ExtResource("5_gfw7l")]
+[node name="spike53" parent="Spike/Individual Spikes/spikerow3" groups=["sr3"] instance=ExtResource("5_gfw7l")]
 position = Vector2(203, -135)
 
-[node name="spike54" parent="Spike Things/Individual Spikes/spikerow3" groups=["sr3"] instance=ExtResource("5_gfw7l")]
+[node name="spike54" parent="Spike/Individual Spikes/spikerow3" groups=["sr3"] instance=ExtResource("5_gfw7l")]
 position = Vector2(252, -135)
 
-[node name="spike55" parent="Spike Things/Individual Spikes/spikerow3" groups=["sr3"] instance=ExtResource("5_gfw7l")]
+[node name="spike55" parent="Spike/Individual Spikes/spikerow3" groups=["sr3"] instance=ExtResource("5_gfw7l")]
 position = Vector2(301, -135)
 
-[node name="spikerow2" type="Node" parent="Spike Things/Individual Spikes"]
+[node name="spikerow2" type="Node" parent="Spike/Individual Spikes"]
 
-[node name="spike23" parent="Spike Things/Individual Spikes/spikerow2" groups=["sr2"] instance=ExtResource("5_gfw7l")]
+[node name="spike23" parent="Spike/Individual Spikes/spikerow2" groups=["sr2"] instance=ExtResource("5_gfw7l")]
 position = Vector2(-180, -231)
 
-[node name="spike24" parent="Spike Things/Individual Spikes/spikerow2" groups=["sr2"] instance=ExtResource("5_gfw7l")]
+[node name="spike24" parent="Spike/Individual Spikes/spikerow2" groups=["sr2"] instance=ExtResource("5_gfw7l")]
 position = Vector2(-133, -231)
 
-[node name="spike25" parent="Spike Things/Individual Spikes/spikerow2" groups=["sr2"] instance=ExtResource("5_gfw7l")]
+[node name="spike25" parent="Spike/Individual Spikes/spikerow2" groups=["sr2"] instance=ExtResource("5_gfw7l")]
 position = Vector2(-84, -231)
 
-[node name="spike26" parent="Spike Things/Individual Spikes/spikerow2" groups=["sr2"] instance=ExtResource("5_gfw7l")]
+[node name="spike26" parent="Spike/Individual Spikes/spikerow2" groups=["sr2"] instance=ExtResource("5_gfw7l")]
 position = Vector2(-36, -231)
 
-[node name="spike27" parent="Spike Things/Individual Spikes/spikerow2" groups=["sr2"] instance=ExtResource("5_gfw7l")]
+[node name="spike27" parent="Spike/Individual Spikes/spikerow2" groups=["sr2"] instance=ExtResource("5_gfw7l")]
 position = Vector2(12, -231)
 
-[node name="spike28" parent="Spike Things/Individual Spikes/spikerow2" groups=["sr2"] instance=ExtResource("5_gfw7l")]
+[node name="spike28" parent="Spike/Individual Spikes/spikerow2" groups=["sr2"] instance=ExtResource("5_gfw7l")]
 position = Vector2(60, -231)
 
-[node name="spike29" parent="Spike Things/Individual Spikes/spikerow2" groups=["sr2"] instance=ExtResource("5_gfw7l")]
+[node name="spike29" parent="Spike/Individual Spikes/spikerow2" groups=["sr2"] instance=ExtResource("5_gfw7l")]
 position = Vector2(107, -231)
 
-[node name="spike30" parent="Spike Things/Individual Spikes/spikerow2" groups=["sr2"] instance=ExtResource("5_gfw7l")]
+[node name="spike30" parent="Spike/Individual Spikes/spikerow2" groups=["sr2"] instance=ExtResource("5_gfw7l")]
 position = Vector2(155, -231)
 
-[node name="spike31" parent="Spike Things/Individual Spikes/spikerow2" groups=["sr2"] instance=ExtResource("5_gfw7l")]
+[node name="spike31" parent="Spike/Individual Spikes/spikerow2" groups=["sr2"] instance=ExtResource("5_gfw7l")]
 position = Vector2(203, -231)
 
-[node name="spike32" parent="Spike Things/Individual Spikes/spikerow2" groups=["sr2"] instance=ExtResource("5_gfw7l")]
+[node name="spike32" parent="Spike/Individual Spikes/spikerow2" groups=["sr2"] instance=ExtResource("5_gfw7l")]
 position = Vector2(252, -231)
 
-[node name="spike33" parent="Spike Things/Individual Spikes/spikerow2" groups=["sr2"] instance=ExtResource("5_gfw7l")]
+[node name="spike33" parent="Spike/Individual Spikes/spikerow2" groups=["sr2"] instance=ExtResource("5_gfw7l")]
 position = Vector2(301, -231)
 
-[node name="spikerow1" type="Node" parent="Spike Things/Individual Spikes"]
+[node name="spikerow1" type="Node" parent="Spike/Individual Spikes"]
 
-[node name="spike" parent="Spike Things/Individual Spikes/spikerow1" groups=["sr1"] instance=ExtResource("5_gfw7l")]
+[node name="spike" parent="Spike/Individual Spikes/spikerow1" groups=["sr1"] instance=ExtResource("5_gfw7l")]
 position = Vector2(-180, -328)
 
-[node name="spike2" parent="Spike Things/Individual Spikes/spikerow1" groups=["sr1"] instance=ExtResource("5_gfw7l")]
+[node name="spike2" parent="Spike/Individual Spikes/spikerow1" groups=["sr1"] instance=ExtResource("5_gfw7l")]
 position = Vector2(-133, -326)
 
-[node name="spike3" parent="Spike Things/Individual Spikes/spikerow1" groups=["sr1"] instance=ExtResource("5_gfw7l")]
+[node name="spike3" parent="Spike/Individual Spikes/spikerow1" groups=["sr1"] instance=ExtResource("5_gfw7l")]
 position = Vector2(-84, -328)
 
-[node name="spike4" parent="Spike Things/Individual Spikes/spikerow1" groups=["sr1"] instance=ExtResource("5_gfw7l")]
+[node name="spike4" parent="Spike/Individual Spikes/spikerow1" groups=["sr1"] instance=ExtResource("5_gfw7l")]
 position = Vector2(-36, -328)
 
-[node name="spike5" parent="Spike Things/Individual Spikes/spikerow1" groups=["sr1"] instance=ExtResource("5_gfw7l")]
+[node name="spike5" parent="Spike/Individual Spikes/spikerow1" groups=["sr1"] instance=ExtResource("5_gfw7l")]
 position = Vector2(12, -328)
 
-[node name="spike6" parent="Spike Things/Individual Spikes/spikerow1" groups=["sr1"] instance=ExtResource("5_gfw7l")]
+[node name="spike6" parent="Spike/Individual Spikes/spikerow1" groups=["sr1"] instance=ExtResource("5_gfw7l")]
 position = Vector2(60, -328)
 
-[node name="spike7" parent="Spike Things/Individual Spikes/spikerow1" groups=["sr1"] instance=ExtResource("5_gfw7l")]
+[node name="spike7" parent="Spike/Individual Spikes/spikerow1" groups=["sr1"] instance=ExtResource("5_gfw7l")]
 position = Vector2(107, -328)
 
-[node name="spike8" parent="Spike Things/Individual Spikes/spikerow1" groups=["sr1"] instance=ExtResource("5_gfw7l")]
+[node name="spike8" parent="Spike/Individual Spikes/spikerow1" groups=["sr1"] instance=ExtResource("5_gfw7l")]
 position = Vector2(155, -328)
 
-[node name="spike9" parent="Spike Things/Individual Spikes/spikerow1" groups=["sr1"] instance=ExtResource("5_gfw7l")]
+[node name="spike9" parent="Spike/Individual Spikes/spikerow1" groups=["sr1"] instance=ExtResource("5_gfw7l")]
 position = Vector2(203, -328)
 
-[node name="spike10" parent="Spike Things/Individual Spikes/spikerow1" groups=["sr1"] instance=ExtResource("5_gfw7l")]
+[node name="spike10" parent="Spike/Individual Spikes/spikerow1" groups=["sr1"] instance=ExtResource("5_gfw7l")]
 position = Vector2(252, -328)
 
-[node name="spike11" parent="Spike Things/Individual Spikes/spikerow1" groups=["sr1"] instance=ExtResource("5_gfw7l")]
+[node name="spike11" parent="Spike/Individual Spikes/spikerow1" groups=["sr1"] instance=ExtResource("5_gfw7l")]
 position = Vector2(301, -328)
 
 [node name="Camera2D" type="Camera2D" parent="."]
@@ -406,15 +644,20 @@ script = ExtResource("1_3vgde")
 phase1 = [null]
 
 [node name="phase_time" type="Timer" parent="gameManager"]
-wait_time = 60.0
+wait_time = 5.0
+autostart = true
 
 [node name="spikecyctime" type="Timer" parent="gameManager"]
 
 [node name="knight_cycle_time" type="Timer" parent="gameManager"]
 
 [node name="bat_time" type="Timer" parent="gameManager"]
-wait_time = 30.0
+wait_time = 20.0
 one_shot = true
-autostart = true
+
+[node name="ceiling_time" type="Timer" parent="gameManager"]
+wait_time = 10.0
 
 [connection signal="timeout" from="gameManager/phase_time" to="gameManager" method="_on_phase_time_timeout"]
+[connection signal="timeout" from="gameManager/bat_time" to="gameManager" method="_on_bat_time_timeout"]
+[connection signal="timeout" from="gameManager/ceiling_time" to="gameManager" method="_on_ceiling_time_timeout"]
