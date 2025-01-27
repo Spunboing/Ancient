@@ -78,7 +78,7 @@ func ceiling_index():
 	return int(randf_range(0,ceilingarr.size()-1))
 	
 func ceiling_spawns():
-	for i in phase*5:
+	for i in phase*10:
 		var ind = ceiling_index()
 		await get_tree().create_timer(.3).timeout
 		ceilingarr[ind].enable()

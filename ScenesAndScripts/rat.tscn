@@ -26,6 +26,7 @@ animations = [{
 }]
 
 [node name="Rat" type="AnimatedSprite2D"]
+scale = Vector2(2, 2)
 sprite_frames = SubResource("SpriteFrames_hp0ch")
 animation = &"run"
 autoplay = "run"
