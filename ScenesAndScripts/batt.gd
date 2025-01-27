@@ -4,6 +4,7 @@ extends CharacterBody2D
 @onready var collision_shape_2d: CollisionShape2D = $Area2D/CollisionShape2D
 @onready var timer: Timer = $Timer
 @onready var pos = position
+@onready var batSXF: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 @export var speed = 50
 var player_pos
@@ -12,11 +13,13 @@ var active = false
 var goaway = false
 
 func enable():
+	batSXF.play()
 	timer.start()
 	active = true
 	collision_shape_2d.disabled = false
 
 func disable():
+	batSXF.stop()
 	goaway = true
 	active = false
 	collision_shape_2d.disabled = true

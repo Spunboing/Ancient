@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+@onready var hurt: AudioStreamPlayer2D = $hurt
 @onready var i_frames: Timer = $"i-frames"
 @onready var sprite_2d: Sprite2D = $Sprite2D
 @export var cam: Camera2D
@@ -50,6 +51,7 @@ func _physics_process(delta: float) -> void:
 
 func damage(extra):
 	
+	hurt.play()
 	hp -= (1 + extra)*mult
 	heartSprite.frame = hp - 1
 	if not mult == 0:

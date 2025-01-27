@@ -1,7 +1,8 @@
-[gd_scene load_steps=7 format=3 uid="uid://dkg2ex3k1iiwl"]
+[gd_scene load_steps=8 format=3 uid="uid://dkg2ex3k1iiwl"]
 
 [ext_resource type="Script" path="res://ScenesAndScripts/knight.gd" id="1_b7kei"]
 [ext_resource type="Texture2D" uid="uid://b4uqaw4vm755y" path="res://Art/Rat Knight _0_0.png" id="2_4q3fm"]
+[ext_resource type="AudioStream" uid="uid://cd02nevugbup8" path="res://Audio/SFX/Knight Laugh (1).mp3" id="3_3jtrk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rwbvy"]
 atlas = ExtResource("2_4q3fm")
@@ -48,6 +49,11 @@ shape = SubResource("RectangleShape2D_v7fqx")
 [node name="Timer" type="Timer" parent="."]
 wait_time = 5.0
 one_shot = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_3jtrk")
+volume_db = 10.0
+bus = &"SFX"
 
 [connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

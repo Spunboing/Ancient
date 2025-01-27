@@ -553,6 +553,7 @@ position = Vector2(252, -328)
 position = Vector2(301, -328)
 
 [node name="player" parent="." node_paths=PackedStringArray("cam", "heartSprite", "endGameScreen") instance=ExtResource("1_5f18j")]
+z_index = -2
 position = Vector2(38, -205)
 cam = NodePath("../Camera2D")
 heartSprite = NodePath("../Hearts")

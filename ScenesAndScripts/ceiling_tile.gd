@@ -3,6 +3,7 @@ extends Node2D
 @export var enabled = false
 
 func enable():
+
 	$AnimatedSprite2D.position = Vector2(0,0)
 	print("enabling tile")
 	

@@ -4,6 +4,7 @@ extends CharacterBody2D
 @export var chargespeed = 150
 @export var activate = false
 @export var gogo = false
+@onready var laughSFX: AudioStreamPlayer2D = $AudioStreamPlayer2D
 
 @onready var body: AnimatedSprite2D = $AnimatedSprite2D
 @onready var player: CharacterBody2D = $"../../player"
@@ -16,6 +17,7 @@ var dir = 1
 var attack = false
 
 func enable():
+	laughSFX.play()
 	gogo = true
 	activate = true
 
