@@ -52,6 +52,7 @@ func _physics_process(delta):
 					check_dir()
 
 func _on_timer_timeout() -> void:
+	gogo = false
 	position = pos
 	activate = false
 	need_to_check_direction = true

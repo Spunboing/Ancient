@@ -110,6 +110,7 @@ func knight_spawns():
 			print("hi")
 			knightarr[ind].enable()
 	await get_tree().create_timer(knighttime).timeout
+	print("knighty knight")
 	knight_spawns()
 	
 	

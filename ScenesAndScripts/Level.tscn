@@ -436,17 +436,15 @@ position = Vector2(17, -398)
 [node name="crossbow" parent="Crossbows" groups=["crossbow"] instance=ExtResource("6_4ebgd")]
 position = Vector2(-207, -325)
 
-[node name="crossbow2" parent="Crossbows" groups=["crossbow"] instance=ExtResource("6_4ebgd")]
-position = Vector2(-204, -227)
-animation = &"load"
-frame = 13
-frame_progress = 1.0
-
 [node name="crossbow3" parent="Crossbows" groups=["crossbow"] instance=ExtResource("6_4ebgd")]
 position = Vector2(-206, -133)
 
 [node name="crossbow4" parent="Crossbows" groups=["crossbow"] instance=ExtResource("6_4ebgd")]
-position = Vector2(-207, -30)
+position = Vector2(326, -31)
+rotation = -3.12325
+
+[node name="crossbow5" parent="Crossbows" groups=["crossbow"] instance=ExtResource("6_4ebgd")]
+position = Vector2(328, -225)
 rotation = -3.12325
 
 [node name="Knights" type="Node" parent="."]
@@ -661,7 +659,7 @@ script = ExtResource("1_3vgde")
 phase1 = [null]
 
 [node name="phase_time" type="Timer" parent="gameManager"]
-wait_time = 5.0
+wait_time = 45.0
 autostart = true
 
 [node name="spikecyctime" type="Timer" parent="gameManager"]

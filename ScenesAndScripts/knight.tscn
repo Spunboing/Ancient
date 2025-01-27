@@ -33,7 +33,7 @@ z_index = -2
 scale = Vector2(3, 3)
 script = ExtResource("1_b7kei")
 speed = 100
-chargespeed = 250
+chargespeed = 200
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_l8s25")
