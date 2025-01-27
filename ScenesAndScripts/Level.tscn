@@ -1,4 +1,4 @@
-[gd_scene load_steps=20 format=3 uid="uid://brjmnmepv66xv"]
+[gd_scene load_steps=29 format=3 uid="uid://brjmnmepv66xv"]
 
 [ext_resource type="Script" path="res://ScenesAndScripts/game_manager.gd" id="1_3vgde"]
 [ext_resource type="PackedScene" uid="uid://dmtt4aob84w22" path="res://ScenesAndScripts/player.tscn" id="1_5f18j"]
@@ -9,10 +9,11 @@
 [ext_resource type="PackedScene" uid="uid://h3agvb754nyg" path="res://ScenesAndScripts/ceiling_tile.tscn" id="4_xd6l8"]
 [ext_resource type="PackedScene" uid="uid://cv7d7p16bi45e" path="res://ScenesAndScripts/spike.tscn" id="5_gfw7l"]
 [ext_resource type="PackedScene" uid="uid://c66mnjkmm4kun" path="res://ScenesAndScripts/crossbow.tscn" id="6_4ebgd"]
-[ext_resource type="PackedScene" uid="uid://ce1pe0iuspk0m" path="res://ScenesAndScripts/rat.tscn" id="8_c4f8k"]
+[ext_resource type="PackedScene" uid="uid://bu0querqg727w" path="res://ScenesAndScripts/rat.tscn" id="8_c4f8k"]
 [ext_resource type="Texture2D" uid="uid://bgchyggmrs3ho" path="res://Art/pngkey.com-red-png-1073093.png" id="10_2xcbu"]
 [ext_resource type="PackedScene" uid="uid://fnd7d85s36g8" path="res://ScenesAndScripts/sawblade.tscn" id="10_pw54l"]
 [ext_resource type="Script" path="res://ScenesAndScripts/cameraScript.gd" id="11_w75h2"]
+[ext_resource type="Texture2D" uid="uid://bdns43xdq7mp8" path="res://Art/Heart.png" id="14_tmy4h"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5wudx"]
 texture = ExtResource("1_t1tpp")
@@ -339,11 +340,62 @@ _data = {
 "move": SubResource("Animation_by3lo")
 }
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ew06"]
+atlas = ExtResource("14_tmy4h")
+region = Rect2(96, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lbwnt"]
+atlas = ExtResource("14_tmy4h")
+region = Rect2(72, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_u6jmh"]
+atlas = ExtResource("14_tmy4h")
+region = Rect2(48, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y0kjt"]
+atlas = ExtResource("14_tmy4h")
+region = Rect2(24, 0, 24, 24)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y10fc"]
+atlas = ExtResource("14_tmy4h")
+region = Rect2(0, 0, 24, 24)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_762g0"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ew06")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lbwnt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_u6jmh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y0kjt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y10fc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SystemFont" id="SystemFont_cj3dn"]
+
+[sub_resource type="Theme" id="Theme_dves4"]
+default_font = SubResource("SystemFont_cj3dn")
+default_font_size = 48
+
 [node name="testScene2" type="Node2D"]
 
-[node name="player" parent="." node_paths=PackedStringArray("cam") instance=ExtResource("1_5f18j")]
+[node name="player" parent="." node_paths=PackedStringArray("cam", "heartSprite", "endGameScreen") instance=ExtResource("1_5f18j")]
 position = Vector2(65, -240)
 cam = NodePath("../Camera2D")
+heartSprite = NodePath("../Hearts")
+endGameScreen = NodePath("../Control")
 
 [node name="TileMap" type="TileMap" parent="."]
 tile_set = SubResource("TileSet_r2vch")
@@ -768,6 +820,55 @@ one_shot = true
 
 [node name="ceiling_time" type="Timer" parent="gameManager"]
 wait_time = 10.0
+
+[node name="Hearts" type="AnimatedSprite2D" parent="."]
+z_index = 4
+position = Vector2(-253, -23)
+scale = Vector2(2, 2)
+sprite_frames = SubResource("SpriteFrames_762g0")
+frame = 4
+
+[node name="Control" type="Control" parent="."]
+visible = false
+z_index = 120
+layout_mode = 3
+anchors_preset = 0
+offset_left = -12.0
+offset_top = -241.0
+offset_right = 28.0
+offset_bottom = -201.0
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+layout_mode = 0
+offset_left = 21.0
+offset_top = -67.0
+offset_right = 113.0
+color = Color(0.578006, 0.511492, 0.262849, 1)
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control"]
+layout_mode = 0
+offset_left = 22.0
+offset_top = -67.0
+offset_right = 325.0
+offset_bottom = 156.0
+scale = Vector2(0.3, 0.3)
+theme = SubResource("Theme_dves4")
+bbcode_enabled = true
+text = "[center]You lasted
+
+seconds[/center]"
+
+[node name="seconds" type="RichTextLabel" parent="Control"]
+layout_mode = 0
+offset_left = 21.0
+offset_top = -68.0
+offset_right = 331.0
+offset_bottom = 159.0
+scale = Vector2(0.3, 0.3)
+theme = SubResource("Theme_dves4")
+bbcode_enabled = true
+text = "
+[center]0[/center]"
 
 [connection signal="timeout" from="gameManager/phase_time" to="gameManager" method="_on_phase_time_timeout"]
 [connection signal="timeout" from="gameManager/bat_time" to="gameManager" method="_on_bat_time_timeout"]

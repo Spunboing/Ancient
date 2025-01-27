@@ -1,7 +1,10 @@
-[gd_scene load_steps=21 format=3 uid="uid://dmtt4aob84w22"]
+[gd_scene load_steps=24 format=3 uid="uid://dmtt4aob84w22"]
 
 [ext_resource type="Script" path="res://ScenesAndScripts/player.gd" id="1_1uxog"]
 [ext_resource type="Texture2D" uid="uid://dgcb3mv0q2rk6" path="res://Art/Tilset/characterAnimationSheet.png" id="3_h1eie"]
+[ext_resource type="AudioStream" uid="uid://orvixo4unmsj" path="res://SFX/damage.wav" id="3_yt2dj"]
+[ext_resource type="AudioStream" uid="uid://d371l62fasj8w" path="res://Music/Ancient Theme.wav" id="4_rtdkp"]
+[ext_resource type="AudioStream" uid="uid://cl8cqkji47txp" path="res://Music/Last Stand.wav" id="5_bjcrr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_06y5n"]
 size = Vector2(10, 15)
@@ -160,4 +163,16 @@ one_shot = true
 sprite_frames = SubResource("SpriteFrames_gn4t0")
 animation = &"walkDown"
 
+[node name="hurt" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_yt2dj")
+
+[node name="mainMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_rtdkp")
+autoplay = true
+
+[node name="lastHeartMusic" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_bjcrr")
+
 [connection signal="timeout" from="i-frames" to="." method="_on_iframes_timeout"]
+[connection signal="finished" from="mainMusic" to="." method="_on_main_music_finished"]
+[connection signal="finished" from="lastHeartMusic" to="." method="_on_last_heart_music_finished"]
