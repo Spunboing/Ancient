@@ -810,7 +810,7 @@ script = ExtResource("1_3vgde")
 phase1 = [null]
 
 [node name="phase_time" type="Timer" parent="gameManager"]
-wait_time = 5.0
+wait_time = 45.0
 autostart = true
 
 [node name="spikecyctime" type="Timer" parent="gameManager"]
