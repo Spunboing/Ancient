@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://brjmnmepv66xv"]
+[gd_scene load_steps=18 format=3 uid="uid://brjmnmepv66xv"]
 
 [ext_resource type="Script" path="res://ScenesAndScripts/game_manager.gd" id="1_3vgde"]
 [ext_resource type="PackedScene" uid="uid://dmtt4aob84w22" path="res://ScenesAndScripts/player.tscn" id="1_5f18j"]
@@ -9,6 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://h3agvb754nyg" path="res://ScenesAndScripts/ceiling_tile.tscn" id="4_xd6l8"]
 [ext_resource type="PackedScene" uid="uid://cv7d7p16bi45e" path="res://ScenesAndScripts/spike.tscn" id="5_gfw7l"]
 [ext_resource type="PackedScene" uid="uid://c66mnjkmm4kun" path="res://ScenesAndScripts/crossbow.tscn" id="6_4ebgd"]
+[ext_resource type="PackedScene" uid="uid://ce1pe0iuspk0m" path="res://ScenesAndScripts/rat.tscn" id="8_c4f8k"]
 [ext_resource type="PackedScene" uid="uid://fnd7d85s36g8" path="res://ScenesAndScripts/sawblade.tscn" id="10_pw54l"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5wudx"]
@@ -285,6 +286,14 @@ layer_2/tile_data = PackedInt32Array(-983045, 131074, 0, -983044, 131074, 0, -98
 layer_3/name = "Traps"
 layer_3/z_index = 2
 
+[node name="Bats" type="Node" parent="."]
+
+[node name="batt" parent="Bats" groups=["bat"] instance=ExtResource("4_5782m")]
+position = Vector2(-250, -186)
+
+[node name="batt2" parent="Bats" groups=["bat"] instance=ExtResource("4_5782m")]
+position = Vector2(375, -183)
+
 [node name="CeilingTiles" type="Node" parent="."]
 
 [node name="CeilingTile" parent="CeilingTiles" groups=["ceiling"] instance=ExtResource("4_xd6l8")]
@@ -419,14 +428,6 @@ position = Vector2(-12, -346)
 visible = false
 position = Vector2(17, -398)
 
-[node name="Bats" type="Node" parent="."]
-
-[node name="batt" parent="Bats" groups=["bat"] instance=ExtResource("4_5782m")]
-position = Vector2(-250, -186)
-
-[node name="batt2" parent="Bats" groups=["bat"] instance=ExtResource("4_5782m")]
-position = Vector2(375, -183)
-
 [node name="Crossbows" type="Node" parent="."]
 
 [node name="crossbow" parent="Crossbows" instance=ExtResource("6_4ebgd")]
@@ -471,6 +472,17 @@ position = Vector2(55, -421)
 
 [node name="knight6" parent="Knights" groups=["knight"] instance=ExtResource("4_t62va")]
 position = Vector2(302, -420)
+
+[node name="rats" type="Node" parent="."]
+
+[node name="Rat" parent="rats" instance=ExtResource("8_c4f8k")]
+position = Vector2(-205, -58)
+
+[node name="Rat2" parent="rats" instance=ExtResource("8_c4f8k")]
+position = Vector2(299, -183)
+
+[node name="Rat3" parent="rats" instance=ExtResource("8_c4f8k")]
+position = Vector2(-179, -277)
 
 [node name="sawblades" type="Node" parent="."]
 

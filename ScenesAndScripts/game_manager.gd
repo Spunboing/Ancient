@@ -50,7 +50,7 @@ func ceiling_index():
 	return int(randf_range(0,ceilingarr.size()-1))
 	
 func ceiling_spawns():
-	for i in phase*3:
+	for i in phase*5:
 		var ind = ceiling_index()
 		ceilingarr[ind].enable()
 	ceiling_time.start()
