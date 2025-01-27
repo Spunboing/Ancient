@@ -39,6 +39,7 @@ func _process(delta):
 				loadState = "loaded"
 		elif loadState == "loaded":
 			print("fire")
+			$AudioStreamPlayer2D.play()
 			play("empty")
 			var arrow = arrowPrefab.instantiate()
 			get_tree().current_scene.add_child(arrow)
